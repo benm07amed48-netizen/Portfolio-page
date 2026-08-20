@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <style>
         body {
@@ -8,6 +7,26 @@
             padding: 20px;
             margin: 20px;
         }
+
+        .contact-form {
+             display: grid;
+           grid-template-columns: max-content 1fr; 
+            gap: 15px 20px;
+            align-items: center;
+            text-align: left;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .lab {
+            font-weight: bold;
+        }
+
+        .fld {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px;
+}
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +47,7 @@
             / <a href="#top">Contact</a> </nav>
     </header>
     <main>
-        <form action="mailto:mohamed.benkkhira.dev@gmail.com" method="post">
+        <section>
             <table style="margin: auto;" width="100%" cellpadding="5px">
                 <tr>
                     <td><a target="_blank" href="https://github.com/benm07amed48-netizen"><img
@@ -42,25 +61,69 @@
                     <td><a target="_blank" href="https://t.me/Mohamed_Algeria_2026"><img
                                 src="res/icons8-telegram-logo-96.png" alt="telegram"></a></td>
                 </tr>
-                <tr>
-                    <td colspan="5" style="text-align: center; border: 2px solid #000; border-radius: 20px;">
-                        <div><label for="sbj">Subject : </label><input name="subject"
-                                placeholder="type the subject of you message" title="type the subject of you message"
-                                id="sbj" type="text"></div>
-                        <div><label for="mail">Receiver:</label><input type="text" disabled name="receiver" id="mail"
-                                value="mohamed.benkhira.dev@gmail.com"></div>
-                        <div><label for="msg">Message :</label><textarea name="the content" id="msg"
-                                placeholder="write you message here" title="write you message here"></textarea></div>
-
-                    </td>
-                <tr>
-                    <td colspan="5">
-                        <div style="justify-self: center;"><input type="submit" name="Send" value="Send"></div>
-                    </td>
-                </tr>
-                </tr>
             </table>
-        </form>
+        </section>
+        <section style="text-align: center; border: 2px solid #000; border-radius: 20px;">
+        <form action="https://formsubmit.co/mohamed.benkhira.dev@gmail.com" method="POST" enctype="multipart/form-data" class="contact-form">
+                <div style="grid-column: 1 / -1; text-align: center; margin-bottom: 10px;">
+                    <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+                        <img src="res/mail.svg" alt="mail" style="width: 32px; height: 32px;">
+                        <h1 style="margin: 0;">Contact us</h1>
+                    </div>
+                    <hr style="border: 1px solid #000; margin: 15px 0;">
+                    <p style="margin: 0;">Send us a message and we will reply as soon as possible</p>
+                </div>
+
+                <label for="name" class="lab">Full name :</label>
+                <input placeholder="eg: John" required type="text" name="name" id="name" class="fld">
+            
+                <label for="email" class="lab">Email :</label>
+                <input placeholder="eg: exemple@gmail.com" required type="email" name="email" id="email" class="fld">
+            
+                <label for="sub" class="lab">Subject :</label>
+                <select name="_subject" id="sub" class="fld">
+                    <option value="general">General Inquiry</option>
+                    <option value="project">Project Proposal</option>
+                    <option value="hiring">Job Opportunity</option>
+                    <option value="report">Bug Report</option>
+                </select>
+            
+                <label for="message" class="lab" style="align-self: start; padding-top: 5px;">Message :</label>
+                <textarea rows="5" name="message" id="message" class="fld" required minlength="10"></textarea>
+            
+                <label class="lab">Attachment :</label>
+                <div>
+                    <input type="file" name="attachment" id="attach" style="display: none;">
+                    <label for="attach"
+                        style="display: inline-block; padding: 6px 15px; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; background: #f9f9f9;">
+                        📁 Upload File
+                    </label>
+                </div>
+            
+                <span class="lab">How did you hear about us?</span>
+                <div>
+                    <div><label for="ads"><input type="radio" id="ads" name="source" value="search"> Search</label></div>
+                    <div><label for="friend"><input type="radio" id="friend" name="source" value="friend"> Friend</label></div>
+                    <div><label for="online"><input type="radio" id="online" name="source" value="social"> Social Media</label>
+                    </div>
+                </div>
+                <input type="email" name="to" hidden  value="mohamed.benkhira.dev@gmail.com">
+                <div></div>
+                <div>
+                    <input type="checkbox" id="check" name="newsletter" value="yes">
+                    <label for="check">Send me product updates.</label>
+                </div>
+            
+                <div style="grid-column: 1 / -1; text-align: center; margin-top: 10px;">
+                    <input name="Send" value="Send Message" type="submit"
+                        style="padding: 10px 30px; font-family: sans-serif; cursor: pointer;">
+                </div>
+            
+            </form>
+        </section>
+
+
+
     </main>
     <footer style="display: flex; justify-content:flex-end;">
         <div style="text-align: center;">

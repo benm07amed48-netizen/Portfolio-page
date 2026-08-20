@@ -64,7 +64,7 @@
             </table>
         </section>
         <section style="text-align: center; border: 2px solid #000; border-radius: 20px;">
-        <form action="https://formsubmit.co/mohamed.benkhira.dev@gmail.com" method="POST" enctype="multipart/form-data" class="contact-form">
+        <form action="https://formsubmit.co/e666bbbabc2035aaf01509efc9a55366" method="POST" enctype="multipart/form-data" class="contact-form">
                 <div style="grid-column: 1 / -1; text-align: center; margin-bottom: 10px;">
                     <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
                         <img src="res/mail.svg" alt="mail" style="width: 32px; height: 32px;">
@@ -81,7 +81,7 @@
                 <input placeholder="eg: exemple@gmail.com" required type="email" name="email" id="email" class="fld">
             
                 <label for="sub" class="lab">Subject :</label>
-                <select name="_subject" id="sub" class="fld">
+                <select name="subject" id="sub" class="fld">
                     <option value="general">General Inquiry</option>
                     <option value="project">Project Proposal</option>
                     <option value="hiring">Job Opportunity</option>
@@ -107,18 +107,24 @@
                     <div><label for="online"><input type="radio" id="online" name="source" value="social"> Social Media</label>
                     </div>
                 </div>
-                <input type="email" name="to" hidden  value="mohamed.benkhira.dev@gmail.com">
                 <div></div>
                 <div>
                     <input type="checkbox" id="check" name="newsletter" value="yes">
                     <label for="check">Send me product updates.</label>
                 </div>
-            
+                
+                <input type="hidden" name="_subject" value="📬 Portfolio Page Mail">
+                
+                <input type="hidden" name="_captcha" value="false">
+                
+                <input type="hidden" name="_template" value="box">
+                
+                <input type="hidden" name="_next" value="https://benm07amed48-netizen.github.io/Portfolio-page/thanks.html">
+
                 <div style="grid-column: 1 / -1; text-align: center; margin-top: 10px;">
-                    <input name="Send" value="Send Message" type="submit"
+                    <input value="Send Message" type="submit"
                         style="padding: 10px 30px; font-family: sans-serif; cursor: pointer;">
                 </div>
-            
             </form>
         </section>
 

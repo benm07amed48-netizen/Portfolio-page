@@ -6,7 +6,7 @@ A clean, semantic HTML multi-page portfolio built for a Junior Back-End Develope
 
 - **Live Demo:** [View Live Site](https://benm07amed48-netizen.github.io/Portfolio-page/)
 - **Challenge 1:** [roadmap.sh - Basic HTML Website](https://roadmap.sh/projects/basic-html-website)
-- **Challenge 2:** [roadmap.sh - Personal Portfolio](https://roadmap.sh/projects/contact-form)
+- **Challenge 2:** [roadmap.sh - Contact Form](https://roadmap.sh/projects/contact-form)
 
 ## ✨ Features
 

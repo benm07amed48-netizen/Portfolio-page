@@ -1,32 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <style>
+        :root {
+            --bg: #07111d;
+            --bg-soft: #0d1729;
+            --panel: rgba(15, 23, 42, 0.9);
+            --line: rgba(148, 163, 184, 0.25);
+            --text: #e5edf8;
+            --muted: #a7b3c7;
+            --accent: #67e8f9;
+            --shadow: 0 20px 45px rgba(2, 6, 23, 0.45);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            border: 2px solid #000;
-            padding: 20px;
-            margin: 20px;
+            margin: 0;
+            padding: 24px;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(circle at top, rgba(103, 232, 249, 0.1), transparent 30%),
+                linear-gradient(135deg, #020817 0%, #0b1324 50%, #111827 100%);
+            color: var(--text);
+            border: 1px solid var(--line);
+            min-height: 100vh;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #dff9ff;
+        }
+
+        header,
+        main,
+        footer {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 24px;
+            margin-bottom: 20px;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: rgba(15, 23, 42, 0.72);
+            box-shadow: var(--shadow);
+        }
+
+        header div {
+            font-size: 1.1rem;
+            letter-spacing: 0.04em;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: var(--muted);
+        }
+
+        nav a {
+            padding: 6px 10px;
+            border-radius: 999px;
+            color: var(--muted);
+        }
+
+        nav a:hover,
+        nav a:focus {
+            background: rgba(103, 232, 249, 0.08);
+            color: var(--text);
+        }
+
+        main {
+            display: grid;
+            gap: 22px;
+        }
+
+        section {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 24px 26px;
+            box-shadow: var(--shadow);
+            text-align: left;
         }
 
         .contact-form {
-             display: grid;
-           grid-template-columns: max-content 1fr; 
+            display: grid;
+            grid-template-columns: max-content 1fr;
             gap: 15px 20px;
             align-items: center;
             text-align: left;
-            max-width: 650px;
+            max-width: 700px;
             margin: 0 auto;
         }
 
         .lab {
-            font-weight: bold;
+            font-weight: 700;
+            color: var(--text);
         }
 
         .fld {
-        width: 100%;
-        box-sizing: border-box;
-        padding: 8px;
-}
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px 14px;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background: rgba(15, 23, 42, 0.8);
+            color: var(--text);
+            font: inherit;
+        }
+
+        .fld:focus {
+            outline: 2px solid rgba(103, 232, 249, 0.5);
+            border-color: var(--accent);
+        }
+
+        textarea.fld {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .file-upload-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .file-picker {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            cursor: pointer;
+            background: rgba(103, 232, 249, 0.08);
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .file-name {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .file-name.selected {
+            color: var(--accent);
+        }
+
+        .form-panel {
+            text-align: center;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+        }
+
+        input[type="submit"] {
+            border: none;
+            border-radius: 12px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: #07111d;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(103, 232, 249, 0.25);
+        }
+
+        input[type="submit"]:hover {
+            filter: brightness(1.05);
+        }
+
+        footer {
+            padding: 24px 0 10px;
+        }
+
+        footer>div {
+            text-align: center;
+        }
+
+        footer ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            padding: 0;
+            margin: 0 0 12px;
+        }
+
+        footer img {
+            width: 32px;
+            height: 32px;
+            filter: drop-shadow(0 0 10px rgba(103, 232, 249, 0.3));
+        }
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,11 +221,14 @@
 </head>
 
 <body id="top">
-    <header style="display: flex; justify-content: space-between; align-items: center;">
+    <header>
         <div><b>Mohamed benkhira</b></div>
-        <nav> <a href="index.html#top">Home</a> / <a href="projects.html#top">Projects</a> / <a
-                href="articl.html#top">articles</a>
-            / <a href="#top">Contact</a> </nav>
+        <nav>
+            <a href="index.html#top">Home</a> /
+            <a href="projects.html#top">Projects</a> /
+            <a href="articl.html#top">Articles</a> /
+            <a href="#top">Contact</a>
+        </nav>
     </header>
     <main>
         <section>
@@ -63,8 +247,9 @@
                 </tr>
             </table>
         </section>
-        <section style="text-align: center; border: 2px solid #000; border-radius: 20px;">
-        <form action="https://formsubmit.co/e666bbbabc2035aaf01509efc9a55366" method="POST" enctype="multipart/form-data" class="contact-form">
+        <section class="form-panel">
+            <form action="https://formsubmit.co/e666bbbabc2035aaf01509efc9a55366" method="POST"
+                enctype="multipart/form-data" class="contact-form">
                 <div style="grid-column: 1 / -1; text-align: center; margin-bottom: 10px;">
                     <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
                         <img src="res/mail.svg" alt="mail" style="width: 32px; height: 32px;">
@@ -76,10 +261,10 @@
 
                 <label for="name" class="lab">Full name :</label>
                 <input placeholder="eg: John" required type="text" name="name" id="name" class="fld">
-            
+
                 <label for="email" class="lab">Email :</label>
                 <input placeholder="eg: exemple@gmail.com" required type="email" name="email" id="email" class="fld">
-            
+
                 <label for="sub" class="lab">Subject :</label>
                 <select name="subject" id="sub" class="fld">
                     <option value="general">General Inquiry</option>
@@ -87,24 +272,27 @@
                     <option value="hiring">Job Opportunity</option>
                     <option value="report">Bug Report</option>
                 </select>
-            
+
                 <label for="message" class="lab" style="align-self: start; padding-top: 5px;">Message :</label>
                 <textarea rows="5" name="message" id="message" class="fld" required minlength="10"></textarea>
-            
+
                 <label class="lab">Attachment :</label>
-                <div>
+                <div class="file-upload-box">
                     <input type="file" name="attachment" id="attach" style="display: none;">
-                    <label for="attach"
-                        style="display: inline-block; padding: 6px 15px; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; background: #f9f9f9;">
+                    <label for="attach" class="file-picker">
                         📁 Upload File
                     </label>
+                    <span id="file-name" class="file-name">No file selected</span>
                 </div>
-            
+
                 <span class="lab">How did you hear about us?</span>
                 <div>
-                    <div><label for="ads"><input type="radio" id="ads" name="source" value="search"> Search</label></div>
-                    <div><label for="friend"><input type="radio" id="friend" name="source" value="friend"> Friend</label></div>
-                    <div><label for="online"><input type="radio" id="online" name="source" value="social"> Social Media</label>
+                    <div><label for="ads"><input type="radio" id="ads" name="source" value="search"> Search</label>
+                    </div>
+                    <div><label for="friend"><input type="radio" id="friend" name="source" value="friend">
+                            Friend</label></div>
+                    <div><label for="online"><input type="radio" id="online" name="source" value="social"> Social
+                            Media</label>
                     </div>
                 </div>
                 <div></div>
@@ -112,14 +300,15 @@
                     <input type="checkbox" id="check" name="newsletter" value="yes">
                     <label for="check">Send me product updates.</label>
                 </div>
-                
+
                 <input type="hidden" name="_subject" value="📬 Portfolio Page Mail">
-                
+
                 <input type="hidden" name="_captcha" value="false">
-                
+
                 <input type="hidden" name="_template" value="box">
-                
-                <input type="hidden" name="_next" value="https://benm07amed48-netizen.github.io/Portfolio-page/thanks.html">
+
+                <input type="hidden" name="_next"
+                    value="https://benm07amed48-netizen.github.io/Portfolio-page/thanks.html">
 
                 <div style="grid-column: 1 / -1; text-align: center; margin-top: 10px;">
                     <input value="Send Message" type="submit"
@@ -146,6 +335,18 @@
 
         </div>
     </footer>
+    <script>
+        const attachInput = document.getElementById('attach');
+        const fileName = document.getElementById('file-name');
+
+        if (attachInput && fileName) {
+            attachInput.addEventListener('change', function () {
+                const selectedFile = this.files && this.files.length > 0 ? this.files[0].name : 'No file selected';
+                fileName.textContent = selectedFile;
+                fileName.classList.toggle('selected', this.files && this.files.length > 0);
+            });
+        }
+    </script>
 </body>
 
 </html>

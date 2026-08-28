@@ -3,10 +3,209 @@
 
 <head>
     <style>
+        :root {
+            --bg: #07111d;
+            --bg-soft: #0d1729;
+            --panel: rgba(15, 23, 42, 0.9);
+            --panel-alt: rgba(17, 24, 39, 0.94);
+            --line: rgba(148, 163, 184, 0.25);
+            --text: #e5edf8;
+            --muted: #a7b3c7;
+            --accent: #67e8f9;
+            --accent-2: #8b5cf6;
+            --accent-3: #34d399;
+            --shadow: 0 20px 45px rgba(2, 6, 23, 0.45);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            border: 2px solid #000;
-            padding: 20px;
-            margin: 20px;
+            margin: 0;
+            padding: 24px;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(circle at top, rgba(103, 232, 249, 0.12), transparent 30%),
+                linear-gradient(135deg, #020817 0%, #0b1324 50%, #111827 100%);
+            color: var(--text);
+            border: 1px solid var(--line);
+            min-height: 100vh;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #dff9ff;
+        }
+
+        header,
+        main,
+        footer {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 24px;
+            margin-bottom: 20px;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: rgba(15, 23, 42, 0.72);
+            box-shadow: var(--shadow);
+        }
+
+        header div {
+            font-size: 1.1rem;
+            letter-spacing: 0.04em;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: var(--muted);
+        }
+
+        nav a {
+            padding: 6px 10px;
+            border-radius: 999px;
+            color: var(--muted);
+        }
+
+        nav a:hover,
+        nav a:focus {
+            background: rgba(103, 232, 249, 0.08);
+            color: var(--text);
+        }
+
+        main {
+            display: grid;
+            gap: 24px;
+        }
+
+        section {
+            background: rgba(15, 23, 42, 0.78);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 24px 26px;
+            box-shadow: var(--shadow);
+            text-align: left;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: #f8fbff;
+            margin-top: 0;
+        }
+
+        p,
+        li,
+        small {
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .centered {
+            text-align: center;
+        }
+
+        .achievement-table {
+            width: 100%;
+            max-width: 980px;
+            border-collapse: collapse;
+            background: rgba(15, 23, 42, 0.7);
+            border-radius: 14px;
+            overflow: hidden;
+            margin: 0 auto;
+            table-layout: fixed;
+        }
+
+        .achievement-table th,
+        .achievement-table td {
+            border: 1px solid var(--line);
+            padding: 16px 14px;
+            vertical-align: top;
+            text-align: left;
+            background: rgba(15, 23, 42, 0.45);
+        }
+
+        .achievement-table th {
+            background: rgba(103, 232, 249, 0.08);
+            color: var(--text);
+        }
+
+        .achievement-table td ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .recommendation-row {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            text-align: left;
+        }
+
+        .recommendation-row>div {
+            flex: 1 1 220px;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: rgba(17, 24, 39, 0.8);
+            padding: 18px 16px;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.35);
+        }
+
+        .recommendation-row q {
+            display: block;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .recommendation-row small {
+            color: var(--accent);
+        }
+
+        ul {
+            padding-left: 22px;
+        }
+
+        footer {
+            padding: 24px 0 10px;
+        }
+
+        footer>div {
+            text-align: center;
+        }
+
+        footer ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            padding: 0;
+            margin: 0 0 12px;
+        }
+
+        footer img {
+            width: 32px;
+            height: 32px;
+            filter: drop-shadow(0 0 10px rgba(103, 232, 249, 0.3));
         }
     </style>
     <meta charset="UTF-8">
@@ -20,18 +219,23 @@
 </head>
 
 <body id="top">
-    <header style="display: flex; justify-content: space-between; align-items: center;">
+    <header>
         <div><b>Mohamed benkhira</b></div>
-        <nav> <a href="#">Home</a> / </nav>
+        <nav>
+            <a href="#top">Home</a> /
+            <a href="projects.html#top">Projects</a> /
+            <a href="articl.html#top">Articles</a> /
+            <a href="contact.html#top">Contact</a>
+        </nav>
     </header>
     <main>
-        <section style="text-align: center;">
+        <section class="centered">
             <h1>Junior Backend Developer</h1>
             <p>Engineering Student / Software Developer</p>
         </section>
         <section>
             <h4>Bio:</h4>
-            <p style="text-align: center;">I am an aspiring Back-End Engineer and Computer Science student with a strong
+            <p class="centered">I am an aspiring Back-End Engineer and Computer Science student with a strong
                 focus on Python development. I am
                 dedicated to creating clean, efficient, and scalable web applications, designing fast RESTful APIs, and
                 mastering the
@@ -39,7 +243,7 @@
         </section>
         <section>
             <h4>Achievements :</h4>
-            <table style="margin: auto;" width="80%" cellpadding="5px" border="1px">
+            <table class="achievement-table">
                 <tr>
                     <th width="30%">
                         <h4><a href="projects.html" title="click for more projects and explanations">My projects:</a>
@@ -63,14 +267,14 @@
                                     <wbr> check my <a href="contact.html">profile</a>from the contact page.</small>
                                 <!-- ReDo the link  -->
                             </li>
-                            <hr>
+
                             <li>
                                 +50 <a target="_blank" href="https://github.com/">Github</a> repository
                                 <small>I have completed more than 50 projects,<wbr> All documented on GitHub <wbr> across various fields and using multiple programming languages,
                                     <wbr> some of which are personal educational projects<wbr> while others are professional and have been adopted by local Business, feel free to check my profile through the
                                     <a href="contact.html">contact</a> page .</small>
                             </li>
-                            <hr>
+
                             <li>
                                 <a target="_blank" href="https://www.instagram.com/engineering_pioneers_club/">EPC</a>
                                 club CS member .
@@ -109,16 +313,16 @@
         </section>
         <section>
             <h4>Recommendation:</h4>
-            <div style="display: flex; gap: 15px; justify-content: center;">
-                <div style="flex: 1; border: 2px solid #000; padding: 15px; margin: 5px; border-radius: 30px;">
+            <div class="recommendation-row">
+                <div>
                     <q>Mohamed was a great mind in my class he really stood out from the first day </q>
                     <small><b>prof. Medjati Rafik</b></small>
                 </div>
-                <div style="flex: 1; border: 2px solid #000; padding: 15px; margin: 5px; border-radius: 30px;">
+                <div>
                     <q>Benkhira was a brilliant student the classes were a wonderfull an good time </q>
                     <small><b>prof. Nemchi</b></small>
                 </div>
-                <div style="flex: 1; border: 2px solid #000; padding: 15px; margin: 5px; border-radius: 30px;">
+                <div>
                     <q> Benkhira was a student that always suprised me in classes </q>
                     <small><b>prof. Halima Salem</b></small>
                 </div>

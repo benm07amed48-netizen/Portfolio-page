@@ -1,345 +1,718 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
-    <style>
-        :root {
-            --bg: #07111d;
-            --bg-soft: #0d1729;
-            --panel: rgba(15, 23, 42, 0.9);
-            --panel-alt: rgba(17, 24, 39, 0.94);
-            --line: rgba(148, 163, 184, 0.25);
-            --text: #e5edf8;
-            --muted: #a7b3c7;
-            --accent: #67e8f9;
-            --accent-2: #8b5cf6;
-            --accent-3: #34d399;
-            --shadow: 0 20px 45px rgba(2, 6, 23, 0.45);
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            padding: 24px;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            background: radial-gradient(circle at top, rgba(103, 232, 249, 0.12), transparent 30%),
-                linear-gradient(135deg, #020817 0%, #0b1324 50%, #111827 100%);
-            color: var(--text);
-            border: 1px solid var(--line);
-            min-height: 100vh;
-        }
-
-        a {
-            color: var(--accent);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        a:hover {
-            color: #dff9ff;
-        }
-
-        header,
-        main,
-        footer {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 24px;
-            margin-bottom: 20px;
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            background: rgba(15, 23, 42, 0.72);
-            box-shadow: var(--shadow);
-        }
-
-        header div {
-            font-size: 1.1rem;
-            letter-spacing: 0.04em;
-            font-weight: 700;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            color: var(--muted);
-        }
-
-        nav a {
-            padding: 6px 10px;
-            border-radius: 999px;
-            color: var(--muted);
-        }
-
-        nav a:hover,
-        nav a:focus {
-            background: rgba(103, 232, 249, 0.08);
-            color: var(--text);
-        }
-
-        main {
-            display: grid;
-            gap: 24px;
-        }
-
-        section {
-            background: rgba(15, 23, 42, 0.78);
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            padding: 24px 26px;
-            box-shadow: var(--shadow);
-            text-align: left;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4 {
-            color: #f8fbff;
-            margin-top: 0;
-        }
-
-        p,
-        li,
-        small {
-            color: var(--muted);
-            line-height: 1.7;
-        }
-
-        .centered {
-            text-align: center;
-        }
-
-        .achievement-table {
-            width: 100%;
-            max-width: 980px;
-            border-collapse: collapse;
-            background: rgba(15, 23, 42, 0.7);
-            border-radius: 14px;
-            overflow: hidden;
-            margin: 0 auto;
-            table-layout: fixed;
-        }
-
-        .achievement-table th,
-        .achievement-table td {
-            border: 1px solid var(--line);
-            padding: 16px 14px;
-            vertical-align: top;
-            text-align: left;
-            background: rgba(15, 23, 42, 0.45);
-        }
-
-        .achievement-table th {
-            background: rgba(103, 232, 249, 0.08);
-            color: var(--text);
-        }
-
-        .achievement-table td ul {
-            margin: 0;
-            padding-left: 18px;
-        }
-
-        .recommendation-row {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-            text-align: left;
-        }
-
-        .recommendation-row>div {
-            flex: 1 1 220px;
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            background: rgba(17, 24, 39, 0.8);
-            padding: 18px 16px;
-            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.35);
-        }
-
-        .recommendation-row q {
-            display: block;
-            color: var(--text);
-            margin-bottom: 8px;
-        }
-
-        .recommendation-row small {
-            color: var(--accent);
-        }
-
-        ul {
-            padding-left: 22px;
-        }
-
-        footer {
-            padding: 24px 0 10px;
-        }
-
-        footer>div {
-            text-align: center;
-        }
-
-        footer ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            padding: 0;
-            margin: 0 0 12px;
-        }
-
-        footer img {
-            width: 32px;
-            height: 32px;
-            filter: drop-shadow(0 0 10px rgba(103, 232, 249, 0.3));
-        }
-    </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Junior Back-End & Python Developer Portfolio">
-    <meta property="og:title" content="BENKHIRA MOHAMED - Portfolio">
-    <meta property="og:description" content="Python Back-End Engineer Portfolio">
-    <meta property="og:image" content="res/portfolio.jpg">
-    <link rel="icon" href="res/ico.svg" type="image/svg+xml">
-    <title>MOHAMED-PORTFOLIO </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed Benkhira | Scalable Backend Systems & CS Engineering</title>
+  <meta name="description" content="Portfolio of Mohamed Benkhira - Junior Backend Developer & CS Engineering Student at ENPO Oran. Specialized in Python, scalable web architectures, and RESTful APIs.">
+  <meta property="og:title" content="Mohamed Benkhira - Scalable Backend Systems">
+  <meta property="og:description" content="Junior Backend Developer & Software Engineering Portfolio">
+  <meta property="og:image" content="res/portfolio.jpg">
+  
+  <link rel="icon" href="res/ico.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Local Three.js 3D Engine -->
+  <script src="res/three.min.js"></script>
 </head>
 
 <body id="top">
-    <header>
-        <div><b>Mohamed benkhira</b></div>
-        <nav>
-            <a href="#top">Home</a> /
-            <a href="projects.html#top">Projects</a> /
-            <a href="articl.html#top">Articles</a> /
-            <a href="contact.html#top">Contact</a>
-        </nav>
-    </header>
-    <main>
-        <section class="centered">
-            <h1>Junior Backend Developer</h1>
-            <p>Engineering Student / Software Developer</p>
-        </section>
-        <section>
-            <h4>Bio:</h4>
-            <p class="centered">I am an aspiring Back-End Engineer and Computer Science student with a strong
-                focus on Python development. I am
-                dedicated to creating clean, efficient, and scalable web applications, designing fast RESTful APIs, and
-                mastering the
-                fundamentals of modern backend systems.</p>
-        </section>
-        <section>
-            <h4>Achievements :</h4>
-            <table class="achievement-table">
-                <tr>
-                    <th width="30%">
-                        <h4><a href="projects.html" title="click for more projects and explanations">My projects:</a>
-                        </h4>
-                    </th>
-                    <th width="40%">
-                        <h4>Work experience:</h4>
-                    </th>
-                    <th width="30%">
-                        <h4>Educational experiences:</h4>
-                    </th>
-                </tr>
-                <tr>
-                    <td><a href=""> The <strong>N°1</strong> BAC preparation platform (Soon)</a></td>
+  <!-- Sculptural Background Canvas Layer -->
+  <div class="background-canvas" aria-hidden="true"></div>
+  <div class="ambient-glow" aria-hidden="true"></div>
 
-                    <td rowspan="4">
-                        <ul>
-                            <li>
-                                +20 <a target="_blank" href="https://roadmap.sh/backend">Roadmap.sh </a>projects:
-                                <small> I had the whole roadmap.sh path and marked checkpoints by <wbr> completing +20 projects to
-                                    <wbr> check my <a href="contact.html">profile</a>from the contact page.</small>
-                                <!-- ReDo the link  -->
-                            </li>
+  <!-- Floating Center-Bottom Dock Bar -->
+  <aside class="floating-dock-bar" id="floating-center-dock" aria-label="Quick Navigation Dock">
+    <a href="#top" class="dock-logo-btn" title="Back to Top" aria-label="Back to Top">
+      <img src="res/portfolio.jpg" alt="Mohamed Benkhira" class="dock-avatar-img">
+    </a>
 
-                            <li>
-                                +50 <a target="_blank" href="https://github.com/">Github</a> repository
-                                <small>I have completed more than 50 projects,<wbr> All documented on GitHub <wbr> across various fields and using multiple programming languages,
-                                    <wbr> some of which are personal educational projects<wbr> while others are professional and have been adopted by local Business, feel free to check my profile through the
-                                    <a href="contact.html">contact</a> page .</small>
-                            </li>
+    <div class="dock-divider"></div>
 
-                            <li>
-                                <a target="_blank" href="https://www.instagram.com/engineering_pioneers_club/">EPC</a>
-                                club CS member .
-                                <small>I participated in numerous events organized by the APS Club by designing
-                                    organizational interfaces for the team's tasks
-                                    and the events held</small>
-                            </li>
-                        </ul>
-                    </td>
-                    <td rowspan="4">
-                        <ul>
-                            <li>Current Student at <a target="_blank" href="https://www.enp-oran.dz/en/">ENPO</a></li>
-                            <li>various courses from <a target="_blank"
-                                    href="https://www.youtube.com/@ElzeroWebSchool">alzero</a> web school</li>
-                            <li>guided by <a target="_blank" href="https://roadmap.sh/">Roadmap.sh</a> learning maps
-                            </li>
-                            <li>Holder of a Bachelor's degree with very good grade</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td><a target="_blank" href="https://benm07amed48-netizen.github.io/CV-page/">RESUME page (CV)</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p>CLI python-only store</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td><a target="_blank" href="https://benm07amed48-netizen.github.io/Portfolio-page/"> My Own
-                            Portfolio</a></td>
-                </tr>
-                <!-- THE FIRST PROJECT NEEDS TO BE EDITED LATER ON  -->
-            </table>
-        </section>
-        <section>
-            <h4>Recommendation:</h4>
-            <div class="recommendation-row">
-                <div>
-                    <q>Mohamed was a great mind in my class he really stood out from the first day </q>
-                    <small><b>prof. Medjati Rafik</b></small>
-                </div>
-                <div>
-                    <q>Benkhira was a brilliant student the classes were a wonderfull an good time </q>
-                    <small><b>prof. Nemchi</b></small>
-                </div>
-                <div>
-                    <q> Benkhira was a student that always suprised me in classes </q>
-                    <small><b>prof. Halima Salem</b></small>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer style="display: flex; justify-content:flex-end;">
-        <div style="text-align: center;">
-            <div>
-                <ul style="list-style: none; display: flex ;gap: 20px; justify-content: center;">
-                    <li><a href="#top"><img src="res/circle-arrow-up.svg"></a></li>
-                    <li><a href="contact.html"><img src="res/circle-user-round.svg"></a></li>
-                </ul>
-            </div>
-            <p><small> built with <b>HTML5</b>-only , &copy; all rights reserved 2026 </small></p>
+    <ul class="dock-nav-list">
+      <li class="dock-item">
+        <a href="#top" class="dock-link-btn active" aria-label="Home">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+        </a>
+        <span class="dock-tooltip">Home</span>
+      </li>
+
+      <li class="dock-item">
+        <a href="#journey" class="dock-link-btn" aria-label="Roadmap">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
+        <span class="dock-tooltip">Roadmap</span>
+      </li>
+
+      <li class="dock-item">
+        <a href="resume.html" class="dock-link-btn" aria-label="Resume">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+          </svg>
+        </a>
+        <span class="dock-tooltip">Resume</span>
+      </li>
+
+      <li class="dock-item">
+        <a href="projects.html" class="dock-link-btn" aria-label="Projects">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          </svg>
+        </a>
+        <span class="dock-tooltip">Projects</span>
+      </li>
+
+      <li class="dock-item">
+        <a href="#articles" class="dock-link-btn" aria-label="Articles">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="12 8 8 12 12 16 16 12 12 8"></polygon>
+          </svg>
+        </a>
+        <span class="dock-tooltip">Articles</span>
+      </li>
+
+      <li class="dock-item">
+        <a href="#contact" class="dock-link-btn" aria-label="Contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </a>
+        <span class="dock-tooltip">Contact</span>
+      </li>
+    </ul>
+
+    <div class="dock-divider"></div>
+
+    <div class="dock-item">
+      <button type="button" class="dock-link-btn theme-toggle-trigger" aria-label="Toggle Theme">
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+      <span class="dock-tooltip">Toggle Theme</span>
+    </div>
+  </aside>
+
+  <div class="app-container">
+    <!-- Top Editorial Liquid Glass Header -->
+    <header class="site-header editorial-header">
+      <a href="#about" class="logo-btn" id="logo-btn" title="About Mohamed Benkhira" aria-label="Go to About Me">
+        <div class="logo-circle">
+          <img src="res/portfolio.jpg" alt="Mohamed Benkhira" class="logo-avatar-img">
         </div>
+        <div class="logo-text">
+          <span class="logo-name">Mohamed Benkhira</span>
+          <span class="logo-role">Backend Engineer &bull; CS ENPO</span>
+        </div>
+      </a>
+
+      <nav aria-label="Primary Navigation" class="editorial-nav">
+        <a href="#top" class="editorial-nav-item active">HOME</a>
+        <span class="slash-divider">/</span>
+        <a href="#journey" class="editorial-nav-item">ROADMAP</a>
+        <span class="slash-divider">/</span>
+        <a href="resume.html" class="editorial-nav-item">RESUME</a>
+        <span class="slash-divider">/</span>
+        <a href="projects.html" class="editorial-nav-item">PROJECTS</a>
+        <span class="slash-divider">/</span>
+        <a href="articl.html" class="editorial-nav-item">ARTICLES</a>
+        <span class="slash-divider">/</span>
+        <a href="contact.html" class="editorial-nav-item">CONTACT</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="theme-toggle-btn theme-toggle-trigger" id="theme-toggle-btn" aria-label="Toggle Theme (Light / Dark Mode)">
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Hero Section -->
+    <main>
+      <section class="hero-section editorial-hero" id="hero">
+        <div class="hero-reticle-grid" aria-hidden="true">
+          <div class="reticle-line diagonal-1"></div>
+          <div class="reticle-line diagonal-2"></div>
+          <div class="reticle-line horizontal"></div>
+          <div class="reticle-line vertical"></div>
+          <div class="reticle-orbit orbit-outer"></div>
+          <div class="reticle-orbit orbit-inner"></div>
+        </div>
+
+        <div class="hero-halo-ring" aria-hidden="true">
+          <div class="halo-core-glow"></div>
+        </div>
+
+        <!-- Center Stage: 3D Rubik's Cube -->
+        <div class="hero-center-visual">
+          <div class="cube-visual-container">
+            <div class="cube-canvas-wrapper" id="cube-canvas-container">
+              <canvas id="cube-canvas"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Giant Architectural Typography with Scrambled Badges -->
+        <div class="hero-title-container editorial-title-container">
+          <div class="floating-tech-icon icon-python" title="Python 3">
+            <img src="res/badge-python.svg" alt="Python">
+          </div>
+          <div class="floating-tech-icon icon-js" title="JavaScript">
+            <img src="res/badge-js.svg" alt="JavaScript">
+          </div>
+          <div class="floating-tech-icon icon-html" title="HTML5">
+            <img src="res/badge-html.svg" alt="HTML5">
+          </div>
+
+          <h1 class="hero-giant-title">
+            <span class="title-line-1">SCALABLE SYSTEMS.</span>
+            <span class="title-line-2">QUIETLY RESILIENT.</span>
+          </h1>
+        </div>
+
+        <!-- Narrative Block -->
+        <div class="hero-narrative-block">
+          <p class="hero-editorial-desc">
+            Computer Science Engineering Student at <strong>ENPO Oran</strong> &bull; Junior Back-End Developer building high-performance RESTful APIs, modular Python architectures, and clean database designs.
+          </p>
+
+          <div class="hero-cta-group editorial-cta-group">
+            <a href="#journey" class="btn-primary">
+              <span>Explore Roadmap ➔</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bottom Tech & Trust Ribbon Marquee -->
+        <div class="hero-tech-strip" aria-label="Core Technologies & Affiliations">
+          <div class="tech-strip-item"><span>PYTHON 3</span></div>
+          <div class="tech-strip-dot">&bull;</div>
+          <div class="tech-strip-item"><span>FASTAPI</span></div>
+          <div class="tech-strip-dot">&bull;</div>
+          <div class="tech-strip-item"><span>POSTGRESQL</span></div>
+          <div class="tech-strip-dot">&bull;</div>
+          <div class="tech-strip-item"><span>DOCKER</span></div>
+          <div class="tech-strip-dot">&bull;</div>
+          <div class="tech-strip-item"><span>ENPO ORAN</span></div>
+          <div class="tech-strip-dot">&bull;</div>
+          <div class="tech-strip-item"><span>ROADMAP.SH</span></div>
+          <div class="tech-strip-dot">&bull;</div>
+          <div class="tech-strip-item"><span>REDIS</span></div>
+          <div class="tech-strip-dot">&bull;</div>
+          <div class="tech-strip-item"><span>LINUX</span></div>
+          <div class="tech-strip-dot">&bull;</div>
+          <div class="tech-strip-item"><span>THREE.JS</span></div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           3. Merged Continuous Horizontal Roadmap Scroller (Exact Match to Images 3, 4, 5)
+           ==================================================================== -->
+      <section class="horizontal-journey-section" id="journey">
+        <div class="journey-wrapper">
+          <!-- Left Column (Sticky narrative matching EchoFi) -->
+          <div class="journey-left-block">
+            <div class="journey-badge-tag">ROADMAP</div>
+            <h2 class="journey-giant-heading">We are forging scalable systems where every millisecond counts</h2>
+            <p class="journey-desc-text">
+              Mohamed's roadmap demonstrates the structured progression from computer science theory at ENPO Oran to building high-concurrency Python APIs, production web applications, and verified engineering credentials.
+            </p>
+
+            <div class="journey-controls-row">
+              <a href="resume.html" class="btn-primary">
+                <span>Explore Full Resume ➔</span>
+              </a>
+              <div class="journey-arrow-nav">
+                <button type="button" class="journey-nav-btn" id="journey-prev-btn" aria-label="Previous Phase" title="Previous Phase">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button type="button" class="journey-nav-btn" id="journey-next-btn" aria-label="Next Phase" title="Next Phase">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <span class="journey-scroll-hint">Scroll with mouse wheel or drag horizontally</span>
+          </div>
+
+          <!-- Vertical Split Line -->
+          <div class="journey-vertical-divider"></div>
+
+          <!-- Right Horizontal Conveyor (Phases 1 to 5) -->
+          <div class="journey-track-viewport" id="journey-track-viewport">
+            <div class="journey-cards-track" id="journey-cards-track">
+              <!-- Phase 1 -->
+              <div class="journey-phase-card is-active-phase" data-phase-index="0">
+                <div class="phase-header-tag">PHASE 1 &bull; FOUNDATION</div>
+                <div class="phase-visual-card">
+                  <img src="res/phase1-shield.jpg" onerror="this.onerror=null; this.src='res/phase1-shield.svg';" alt="Phase 1: Academic Foundation">
+                </div>
+                <div class="phase-caption-text">
+                  <strong>ENPO Oran CS Engineering</strong>
+                  Core foundation in distributed algorithms, object-oriented systems, and network protocols.
+                </div>
+              </div>
+
+              <!-- Phase 2 -->
+              <div class="journey-phase-card" data-phase-index="1">
+                <div class="phase-header-tag">PHASE 2 &bull; CERTIFICATION</div>
+                <div class="phase-visual-card">
+                  <img src="res/phase2-cert.jpg" onerror="this.onerror=null; this.src='res/phase2-cert.svg';" alt="Phase 2: Verified Track Certifications">
+                </div>
+                <div class="phase-caption-text">
+                  <strong>Roadmap.sh & Honors</strong>
+                  Completed full Backend Developer track with 20+ checkpoints and Bachelor's with high honors.
+                </div>
+              </div>
+
+              <!-- Phase 3 -->
+              <div class="journey-phase-card" data-phase-index="2">
+                <div class="phase-header-tag">PHASE 3 &bull; CODEBASES</div>
+                <div class="phase-visual-card">
+                  <img src="res/phase3-milestones.jpg" onerror="this.onerror=null; this.src='res/phase3-milestones.svg';" alt="Phase 3: Milestones & Repositories">
+                </div>
+                <div class="phase-caption-text">
+                  <strong>+20 Checkpoints & +50 Repos</strong>
+                  Extensive open-source codebases, Docker containerization, and EPC CS department leadership.
+                </div>
+              </div>
+
+              <!-- Phase 4 -->
+              <div class="journey-phase-card" data-phase-index="3">
+                <div class="phase-header-tag">PHASE 4 &bull; PRODUCTION</div>
+                <div class="phase-visual-card">
+                  <img src="res/phase4-platform.jpg" onerror="this.onerror=null; this.src='res/phase4-platform.svg';" alt="Phase 4: Production Builds">
+                </div>
+                <div class="phase-caption-text">
+                  <strong>BAC Platform & Store Engine</strong>
+                  Live educational prep platform with analytics & Python CLI inventory transaction engine.
+                </div>
+              </div>
+
+              <!-- Phase 5 -->
+              <div class="journey-phase-card" data-phase-index="4">
+                <div class="phase-header-tag">PHASE 5 &bull; DISTINCTION</div>
+                <div class="phase-visual-card">
+                  <img src="res/phase5-endorsements.jpg" onerror="this.onerror=null; this.src='res/phase5-endorsements.svg';" alt="Phase 5: Endorsements">
+                </div>
+                <div class="phase-caption-text">
+                  <strong>Academic Recommendations</strong>
+                  Distinguished endorsements from Prof. Medjati Rafik, Prof. Nemchi, and Prof. Halima Salem.
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Continuous Timeline Ruler Axis -->
+            <div class="journey-timeline-ruler-wrap">
+              <div class="ruler-progress-line" id="ruler-progress-line"></div>
+              <div class="journey-timeline-ruler" id="journey-timeline-ruler">
+                <div class="ruler-milestone is-active" data-phase="0">
+                  <span class="ruler-date">Q1.2024</span>
+                  <div class="ruler-ticks-bar"></div>
+                </div>
+                <div class="ruler-milestone" data-phase="1">
+                  <span class="ruler-date">Q2.2024</span>
+                  <div class="ruler-ticks-bar"></div>
+                </div>
+                <div class="ruler-milestone" data-phase="2">
+                  <span class="ruler-date">Q3.2025</span>
+                  <div class="ruler-ticks-bar"></div>
+                </div>
+                <div class="ruler-milestone" data-phase="3">
+                  <span class="ruler-date">Q4.2025</span>
+                  <div class="ruler-ticks-bar"></div>
+                </div>
+                <div class="ruler-milestone" data-phase="4">
+                  <span class="ruler-date">Q1.2026</span>
+                  <div class="ruler-ticks-bar"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           4. Featured Engineering Projects Section
+           ==================================================================== -->
+      <section class="featured-projects-section" id="projects" style="padding: 90px 0 60px;">
+        <div class="contact-hero-header" style="margin-bottom: 44px;">
+          <span class="section-tag">Curated Systems & Applications</span>
+          <h2 class="section-title" style="font-size: clamp(2.2rem, 3.6vw, 3.2rem);">Featured Engineering Projects</h2>
+          <p class="section-subtitle">Real-world web platforms, command-line utilities, and distributed microservices engineered with clean architecture.</p>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          <!-- Project 1: BAC Platform -->
+          <div class="project-card">
+            <div class="project-image-wrap">
+              <img src="res/project-bac.jpg" onerror="this.onerror=null; this.src='res/project-bac-3d.svg';" alt="BAC Platform 3D Showcase" loading="lazy">
+            </div>
+            <div class="project-info">
+              <span class="project-badge">Full-Stack Educational Platform</span>
+              <h3 class="project-title">The N°1 BAC Preparation Platform</h3>
+              <p class="project-desc">
+                An all-in-one educational web platform built for Algerian high school students, featuring automated progress tracking analytics, subject modules, and state persistence.
+              </p>
+              <div class="skills-pill-group">
+                <span class="skill-pill">HTML5 / CSS3</span>
+                <span class="skill-pill">JavaScript</span>
+                <span class="skill-pill">Local Storage</span>
+                <span class="skill-pill">Analytics</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://benm07amed48-netizen.github.io/bac-site/" target="_blank" class="btn-primary" style="padding: 9px 20px; font-size: 0.84rem;">
+                  <span>Visit Platform ↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: CLI Store -->
+          <div class="project-card">
+            <div class="project-image-wrap">
+              <img src="res/project-store.jpg" onerror="this.onerror=null; this.src='res/project-store-3d.svg';" alt="CLI Python-Only Store Engine 3D" loading="lazy">
+            </div>
+            <div class="project-info">
+              <span class="project-badge">Python Backend &amp; CLI</span>
+              <h3 class="project-title">CLI Python-Only Store Engine</h3>
+              <p class="project-desc">
+                A command-line enterprise point-of-sale and inventory management application built purely in Python, handling transactions, persistent storage, and tabular invoicing.
+              </p>
+              <div class="skills-pill-group">
+                <span class="skill-pill">Python 3</span>
+                <span class="skill-pill">File I/O &amp; Storage</span>
+                <span class="skill-pill">CLI Formatting</span>
+                <span class="skill-pill">OOP Architecture</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/benm07amed48-netizen/Store-with-python-only" target="_blank" class="btn-primary" style="padding: 9px 20px; font-size: 0.84rem;">
+                  <span>View on GitHub ↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Distributed API Gateway -->
+          <div class="project-card">
+            <div class="project-image-wrap">
+              <img src="res/project-gateway.jpg" onerror="this.onerror=null; this.src='res/project-gateway-3d.svg';" alt="Distributed API Gateway 3D" loading="lazy">
+            </div>
+            <div class="project-info">
+              <span class="project-badge">High-Concurrency Gateway</span>
+              <h3 class="project-title">Distributed High-Concurrency API Gateway</h3>
+              <p class="project-desc">
+                A high-performance reverse-proxy and API gateway architecture featuring token rate limiting, Redis in-memory cache, and sub-15ms response latency under heavy load.
+              </p>
+              <div class="skills-pill-group">
+                <span class="skill-pill">FastAPI</span>
+                <span class="skill-pill">Redis Cache</span>
+                <span class="skill-pill">Docker</span>
+                <span class="skill-pill">PostgreSQL</span>
+              </div>
+              <div class="project-footer">
+                <a href="projects.html" class="btn-primary" style="padding: 9px 20px; font-size: 0.84rem;">
+                  <span>Explore Architecture ↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: Interactive CV -->
+          <div class="project-card">
+            <div class="project-image-wrap">
+              <img src="res/project-cv.jpg" onerror="this.onerror=null; this.src='res/project-cv-3d.svg';" alt="Interactive Resume &amp; CV Page 3D" loading="lazy">
+            </div>
+            <div class="project-info">
+              <span class="project-badge">Interactive Experience Page</span>
+              <h3 class="project-title">Interactive Resume &amp; CV Page</h3>
+              <p class="project-desc">
+                A comprehensive web CV detailing academic history at ENPO Oran, technical proficiencies, course certifications, and contact pipelines.
+              </p>
+              <div class="skills-pill-group">
+                <span class="skill-pill">Web Resume</span>
+                <span class="skill-pill">Responsive Design</span>
+                <span class="skill-pill">Semantic HTML</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://benm07amed48-netizen.github.io/CV-page/" target="_blank" class="btn-primary" style="padding: 9px 20px; font-size: 0.84rem;">
+                  <span>Visit CV Live ↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 10px;">
+          <a href="projects.html" class="btn-secondary">
+            <span>View All Engineering Codebases ➔</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           4. Spinning Revolving Article Dial (Exact Match to Dark Image 2)
+           ==================================================================== -->
+      <section class="article-dial-section" id="articles">
+        <div class="dial-section-header">
+          <div class="dial-side-caption left">MULTIPLE TECH DOMAINS</div>
+          <div class="dial-side-caption right">SYSTEM ARCHITECTURE</div>
+        </div>
+
+        <div class="article-dial-stage-wrapper">
+          <div class="dial-wheel-orbit" id="article-dial-wheel">
+            <!-- 10 circular cards with photographic covers & counter-rotation -->
+            <div class="dial-card-node" style="--i: 0;" data-article-id="1">
+              <div class="dial-card-inner">
+                <img src="res/art-backend.jpg" alt="Backend Mindset" class="dial-card-photo">
+                <div class="dial-card-scrim"></div>
+                <div class="dial-node-meta">
+                  <span class="dial-node-tag">ARCHITECTURE</span>
+                  <span class="dial-node-title">Backend Mindset</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dial-card-node" style="--i: 1;" data-article-id="2">
+              <div class="dial-card-inner">
+                <img src="res/art-frontend.jpg" alt="Frontend Basics" class="dial-card-photo">
+                <div class="dial-card-scrim"></div>
+                <div class="dial-node-meta">
+                  <span class="dial-node-tag">INTERFACE</span>
+                  <span class="dial-node-title">Frontend Basics</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dial-card-node" style="--i: 2;" data-article-id="3">
+              <div class="dial-card-inner">
+                <img src="res/art-apis.jpg" alt="Modular APIs" class="dial-card-photo">
+                <div class="dial-card-scrim"></div>
+                <div class="dial-node-meta">
+                  <span class="dial-node-tag">SERVICES</span>
+                  <span class="dial-node-title">Modular APIs</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dial-card-node" style="--i: 3;" data-article-id="1">
+              <div class="dial-card-inner">
+                <img src="res/art-db.jpg" onerror="this.onerror=null; this.src='res/art-db.svg';" alt="Database Schemas" class="dial-card-photo">
+                <div class="dial-card-scrim"></div>
+                <div class="dial-node-meta">
+                  <span class="dial-node-tag">STORAGE</span>
+                  <span class="dial-node-title">DB Schemas</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dial-card-node" style="--i: 4;" data-article-id="2">
+              <div class="dial-card-inner">
+                <img src="res/art-docker.jpg" onerror="this.onerror=null; this.src='res/art-docker.svg';" alt="Dockerization" class="dial-card-photo">
+                <div class="dial-card-scrim"></div>
+                <div class="dial-node-meta">
+                  <span class="dial-node-tag">DEVOPS</span>
+                  <span class="dial-node-title">Docker Containers</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dial-card-node" style="--i: 5;" data-article-id="3">
+              <div class="dial-card-inner">
+                <img src="res/art-redis.jpg" onerror="this.onerror=null; this.src='res/art-redis.svg';" alt="Redis Cache" class="dial-card-photo">
+                <div class="dial-card-scrim"></div>
+                <div class="dial-node-meta">
+                  <span class="dial-node-tag">CACHING</span>
+                  <span class="dial-node-title">Redis In-Memory</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dial-card-node" style="--i: 6;" data-article-id="1">
+              <div class="dial-card-inner">
+                <img src="res/art-security.jpg" onerror="this.onerror=null; this.src='res/art-security.svg';" alt="API Security" class="dial-card-photo">
+                <div class="dial-card-scrim"></div>
+                <div class="dial-node-meta">
+                  <span class="dial-node-tag">SECURITY</span>
+                  <span class="dial-node-title">API Authentication</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dial-card-node" style="--i: 7;" data-article-id="2">
+              <div class="dial-card-inner">
+                <img src="res/art-queues.jpg" onerror="this.onerror=null; this.src='res/art-queues.svg';" alt="Async Queues" class="dial-card-photo">
+                <div class="dial-card-scrim"></div>
+                <div class="dial-node-meta">
+                  <span class="dial-node-tag">PIPELINES</span>
+                  <span class="dial-node-title">Async Tasks</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dial-card-node" style="--i: 8;" data-article-id="3">
+              <div class="dial-card-inner">
+                <img src="res/art-python.jpg" onerror="this.onerror=null; this.src='res/art-python.svg';" alt="Python 3 OOP" class="dial-card-photo">
+                <div class="dial-card-scrim"></div>
+                <div class="dial-node-meta">
+                  <span class="dial-node-tag">CORE PYTHON</span>
+                  <span class="dial-node-title">OOP Architecture</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dial-card-node" style="--i: 9;" data-article-id="1">
+              <div class="dial-card-inner">
+                <img src="res/art-clean.jpg" onerror="this.onerror=null; this.src='res/art-clean.svg';" alt="Clean Systems" class="dial-card-photo">
+                <div class="dial-card-scrim"></div>
+                <div class="dial-node-meta">
+                  <span class="dial-node-tag">PATTERNS</span>
+                  <span class="dial-node-title">Clean Systems</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 20px;">
+          <a href="articl.html" class="btn-secondary">
+            <span>Read All Articles & Notes ➔</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           5. 3D Embossed Metallic Coin Contact Stage (Exact Match to Dark Image 1)
+           ==================================================================== -->
+      <section class="contact-coin-section" id="contact">
+        <div class="contact-coin-stage">
+          <div class="coin-glow-orbit"></div>
+          <div class="metallic-coin-3d" id="contact-coin-3d" title="Click to Connect">
+            <span class="coin-symbol-text">$</span>
+          </div>
+        </div>
+
+        <p class="contact-coin-giant-statement">
+          Scalable Backend Systems built on Python and modern architectures, focusing on building high-performance RESTful APIs, distributed database pipelines, and reliable server architectures.
+        </p>
+
+        <div class="contact-coin-action-row">
+          <div class="email-copy-box">
+            <span class="email-display-text" id="email-address-text">mohamed.benkhira.dev@gmail.com</span>
+            <button type="button" class="copy-btn" id="copy-email-btn" aria-label="Copy Email Address">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span id="copy-btn-label">Copy</span>
+            </button>
+          </div>
+
+          <a href="contact.html" class="btn-primary">
+            <span>Open Direct Message Form</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Reader Modal for Article Dial Clicks -->
+    <div class="article-modal-backdrop" id="article-reader-modal" aria-hidden="true">
+      <div class="article-modal-card">
+        <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">&times;</button>
+        <span class="article-badge-chip" id="modal-article-tag">Backend Mindset</span>
+        <h2 id="modal-article-title" style="font-size: 1.6rem;">Why I Chose Backend Development: The Myth of Artistic Talent</h2>
+        <div id="modal-article-body" style="font-size: 1rem; color: var(--text-muted); line-height: 1.8;">
+          <p>
+            When I started programming, I worried about lacking an artistic eye for visual aesthetics or color combinations. I soon realized building software doesn't require being a visual artist; companies rely on dedicated UI/UX designers for visual interfaces, while a backend developer builds the internal engine, scalable endpoints, and reliable data pipelines.
+          </p>
+          <p style="margin-top: 14px;">
+            Focusing purely on logic, structured algorithms, database normalization, and system reliability was the best decision for my engineering foundation.
+          </p>
+        </div>
+        <div style="margin-top: 10px;">
+          <a href="articl.html" class="btn-secondary" style="font-size: 0.86rem;">Read Full Discussion in Articles ➔</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <span style="font-weight: 700; font-family: var(--font-display); font-size: 1.1rem;">Mohamed Benkhira</span>
+        <span class="footer-copy">&copy; 2026 Mohamed Benkhira &bull; Built with HTML5, Vanilla CSS & Three.js</span>
+      </div>
+
+      <ul class="footer-social-list" aria-label="Social and Contact Links">
+        <li>
+          <a href="https://github.com/benm07amed48-netizen" target="_blank" class="footer-social-btn" title="GitHub Profile">
+            <img src="res/icons8-github-96.png" alt="GitHub">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/mohamed-benkhira-571951284" target="_blank" class="footer-social-btn" title="LinkedIn Profile">
+            <img src="res/icons8-linkedin-96.png" alt="LinkedIn">
+          </a>
+        </li>
+        <li>
+          <a href="https://instagram.com/m.hamed.ben.20840/" target="_blank" class="footer-social-btn" title="Instagram Profile">
+            <img src="res/icons8-instagram-logo-96.png" alt="Instagram">
+          </a>
+        </li>
+        <li>
+          <a href="https://t.me/Mohamed_Algeria_2026" target="_blank" class="footer-social-btn" title="Telegram">
+            <img src="res/icons8-telegram-logo-96.png" alt="Telegram">
+          </a>
+        </li>
+        <li>
+          <a href="contact.html" class="footer-social-btn" title="Direct Contact">
+            <img src="res/mail.svg" alt="Contact Email">
+          </a>
+        </li>
+        <li>
+          <a href="#top" class="back-to-top-btn" title="Back to Top" aria-label="Back to Top">
+            <img src="res/circle-arrow-up.svg" alt="Up Arrow">
+          </a>
+        </li>
+      </ul>
     </footer>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 
 </html>

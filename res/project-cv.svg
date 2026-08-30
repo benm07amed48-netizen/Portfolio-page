@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="projCvBg" cx="50%" cy="40%" r="75%">
+      <stop offset="0%" stop-color="#241e18"/>
+      <stop offset="60%" stop-color="#120e0b"/>
+      <stop offset="100%" stop-color="#080604"/>
+    </radialGradient>
+    <linearGradient id="paperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdfbf7"/>
+      <stop offset="40%" stop-color="#f5eee3"/>
+      <stop offset="100%" stop-color="#e3d6c5"/>
+    </linearGradient>
+    <filter id="shadowDoc" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#000000" flood-opacity="0.8"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#df7b35" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#projCvBg)"/>
+
+  <!-- 3D Studio Web CV Document Representation -->
+  <g filter="url(#shadowDoc)" transform="translate(140, 35)">
+    <!-- Sheet of Paper / CV -->
+    <rect x="0" y="0" width="320" height="330" rx="16" fill="url(#paperGrad)" stroke="#df7b35" stroke-width="2"/>
+
+    <!-- Document Header Area -->
+    <circle cx="50" cy="50" r="22" fill="#3d2315"/>
+    <text x="50" y="56" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="900" fill="#df7b35" text-anchor="middle">MB</text>
+    
+    <rect x="86" y="38" width="140" height="12" rx="4" fill="#3d2315"/>
+    <rect x="86" y="56" width="90" height="8" rx="3" fill="#8c6a50"/>
+
+    <!-- Document Content Lines -->
+    <line x1="30" y1="95" x2="290" y2="95" stroke="#d5c4b1" stroke-width="1.5"/>
+
+    <rect x="30" y="115" width="220" height="10" rx="3" fill="#543722"/>
+    <rect x="30" y="135" width="260" height="7" rx="3" fill="#b09e8c"/>
+    <rect x="30" y="150" width="240" height="7" rx="3" fill="#b09e8c"/>
+
+    <rect x="30" y="180" width="180" height="10" rx="3" fill="#543722"/>
+    <rect x="30" y="200" width="250" height="7" rx="3" fill="#b09e8c"/>
+    <rect x="30" y="215" width="210" height="7" rx="3" fill="#b09e8c"/>
+
+    <!-- Golden Wax Seal (Bottom Right) -->
+    <g transform="translate(250, 270)">
+      <circle cx="0" cy="0" r="28" fill="#d97706" stroke="#fef08a" stroke-width="2.5" filter="drop-shadow(0 4px 10px rgba(0,0,0,0.4))"/>
+      <polygon points="0,-16 4,-4 16,-4 7,4 10,16 0,8 -10,16 -7,4 -16,-4 -4,-4" fill="#ffffff"/>
+    </g>
+  </g>
+</svg>

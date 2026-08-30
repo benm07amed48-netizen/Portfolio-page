@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="studioBg2" cx="50%" cy="40%" r="75%">
+      <stop offset="0%" stop-color="#fdfbf7"/>
+      <stop offset="50%" stop-color="#f3ede2"/>
+      <stop offset="100%" stop-color="#e5dccf"/>
+    </radialGradient>
+
+    <linearGradient id="clayGold2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="40%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+
+    <linearGradient id="clayTerracotta2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb923c"/>
+      <stop offset="45%" stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#9a3412"/>
+    </linearGradient>
+
+    <linearGradient id="clayCapTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a2e1d"/>
+      <stop offset="50%" stop-color="#2a160b"/>
+      <stop offset="100%" stop-color="#140803"/>
+    </linearGradient>
+
+    <linearGradient id="clayPlinth2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ede4d8"/>
+      <stop offset="100%" stop-color="#cfbeaa"/>
+    </linearGradient>
+
+    <filter id="clayShadowBig2" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="28" stdDeviation="22" flood-color="#785338" flood-opacity="0.22"/>
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#4a3120" flood-opacity="0.14"/>
+    </filter>
+
+    <filter id="clayShadowSmall2" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#543722" flood-opacity="0.25"/>
+    </filter>
+
+    <filter id="clayGroundShadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <!-- Studio Background -->
+  <rect width="100%" height="100%" fill="url(#studioBg2)" rx="28"/>
+
+  <!-- Pedestal Floor Ground Shadow -->
+  <ellipse cx="300" cy="410" rx="210" ry="32" fill="#8c6a50" opacity="0.28" filter="url(#clayGroundShadow2)"/>
+
+  <!-- 3D Clay Cylindrical Plinth / Base -->
+  <g transform="translate(140, 345)">
+    <path d="M0,35 C0,15 70,0 160,0 C250,0 320,15 320,35 L320,60 C320,80 250,95 160,95 C70,95 0,80 0,60 Z" fill="url(#clayPlinth2)"/>
+    <ellipse cx="160" cy="35" rx="160" ry="35" fill="#f5ede3"/>
+    <ellipse cx="160" cy="35" rx="145" ry="30" fill="#ede4d8"/>
+  </g>
+
+  <!-- 3D Soft Clay Graduation Mortarboard & Medal (Floating Composition) -->
+  <g filter="url(#clayShadowBig2)" transform="translate(300, 190)">
+    <!-- 3D Graduation Cap Diamond Plate -->
+    <polygon points="0,-105 155,-50 0,5 -155,-50" fill="url(#clayCapTop)"/>
+    <!-- Cap Rim Thickness -->
+    <polygon points="-155,-50 0,5 0,22 -155,-33" fill="#1c0e06"/>
+    <polygon points="0,5 155,-50 155,-33 0,22" fill="#2c170b"/>
+
+    <!-- Skull Cap Base Underneath -->
+    <path d="M-65,-20 C-65,30 65,30 65,-20 L65,15 C65,55 -65,55 -65,15 Z" fill="#1c0e06"/>
+
+    <!-- Golden Tassel Button & Cord -->
+    <ellipse cx="0" cy="-50" rx="14" ry="7" fill="url(#clayGold2)"/>
+    <path d="M0,-50 C40,-40 85,-20 95,25 L105,75" fill="none" stroke="url(#clayGold2)" stroke-width="5" stroke-linecap="round"/>
+    <rect x="96" y="75" width="18" height="28" rx="8" fill="url(#clayGold2)" filter="url(#clayShadowSmall2)"/>
+
+    <!-- 3D Floating Gold Medal & Ribbon (Center-Left) -->
+    <g filter="url(#clayShadowSmall2)" transform="translate(-40, 55)">
+      <!-- V-Ribbon (Terracotta) -->
+      <polygon points="-30,-45 0,-10 -15,40 -40,35" fill="url(#clayTerracotta2)"/>
+      <polygon points="30,-45 0,-10 15,40 40,35" fill="#c2410c"/>
+
+      <!-- Golden Seal Disc -->
+      <circle cx="0" cy="45" r="46" fill="url(#clayGold2)"/>
+      <circle cx="0" cy="45" r="36" fill="#fef08a"/>
+      <circle cx="0" cy="45" r="32" fill="#d97706"/>
+
+      <!-- Checkmark in Medal -->
+      <polyline points="-12,45 -4,53 14,35" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Floating Distinction Beads -->
+    <circle cx="115" cy="-80" r="14" fill="url(#clayGold2)" filter="url(#clayShadowSmall2)"/>
+    <circle cx="-120" cy="45" r="10" fill="url(#clayTerracotta2)" filter="url(#clayShadowSmall2)"/>
+  </g>
+</svg>

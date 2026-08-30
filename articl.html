@@ -1,292 +1,401 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
-    <style>
-        :root {
-            --bg: #07111d;
-            --panel: rgba(15, 23, 42, 0.9);
-            --panel-alt: rgba(17, 24, 39, 0.96);
-            --line: rgba(148, 163, 184, 0.25);
-            --text: #e5edf8;
-            --muted: #a7b3c7;
-            --accent: #67e8f9;
-            --shadow: 0 20px 45px rgba(2, 6, 23, 0.45);
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            padding: 24px;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            background: radial-gradient(circle at top, rgba(103, 232, 249, 0.1), transparent 30%),
-                linear-gradient(135deg, #020817 0%, #0b1324 50%, #111827 100%);
-            color: var(--text);
-            border: 1px solid var(--line);
-            min-height: 100vh;
-        }
-
-        a {
-            color: var(--accent);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        a:hover {
-            color: #dff9ff;
-        }
-
-        header,
-        main,
-        footer {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 24px;
-            margin-bottom: 20px;
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            background: rgba(15, 23, 42, 0.72);
-            box-shadow: var(--shadow);
-        }
-
-        header div {
-            font-size: 1.1rem;
-            letter-spacing: 0.04em;
-            font-weight: 700;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            color: var(--muted);
-        }
-
-        nav a {
-            padding: 6px 10px;
-            border-radius: 999px;
-            color: var(--muted);
-        }
-
-        nav a:hover,
-        nav a:focus {
-            background: rgba(103, 232, 249, 0.08);
-            color: var(--text);
-        }
-
-        main {
-            display: grid;
-            gap: 20px;
-        }
-
-        article,
-        section {
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            padding: 22px 24px;
-            box-shadow: var(--shadow);
-        }
-
-        h1,
-        h2,
-        h3,
-        h4 {
-            color: #f8fbff;
-            margin-top: 0;
-        }
-
-        .title {
-            margin-bottom: 10px;
-            color: #f8fbff;
-        }
-
-        .items {
-            margin-top: 0;
-            color: var(--muted);
-            line-height: 1.7;
-        }
-
-        ul {
-            list-style: none;
-            padding-left: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        figure {
-            margin: 0;
-            padding: 12px;
-            border: 1px solid var(--line);
-            border-radius: 12px;
-            background: rgba(17, 24, 39, 0.7);
-            text-align: center;
-        }
-
-        figcaption {
-            color: var(--text);
-            margin-top: 6px;
-        }
-
-        footer {
-            padding: 24px 0 10px;
-        }
-
-        footer>div {
-            text-align: center;
-        }
-
-        footer ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            padding: 0;
-            margin: 0 0 12px;
-        }
-
-        footer img {
-            width: 32px;
-            height: 32px;
-            filter: drop-shadow(0 0 10px rgba(103, 232, 249, 0.3));
-        }
-    </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Junior Back-End & Python Developer ARTICLES">
-    <meta property="og:title" content="BENKHIRA MOHAMED - ARTICLES">
-    <meta property="og:description" content="Python Back-End Engineer ARTICLES">
-    <meta property="og:image" content="res/portfolio.jpg">
-    <meta name="author" content="Mohamed">
-    <meta name="revised" content="Tuesday, August 18th, 2026, 02:20am">
-    <link rel="icon" href="res/scroll-text.svg" type="image/svg+xml">
-    <title> MY articles </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles & Architectural Notes | Mohamed Benkhira</title>
+  <meta name="description" content="Technical articles, reflections, and insights on backend architecture, Python engineering, and pragmatic software development by Mohamed Benkhira.">
+  
+  <link rel="icon" href="res/ico.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body id="top">
-    <header>
-        <div><b>Mohamed benkhira</b></div>
-        <nav>
-            <a href="index.html#top">Home</a> /
-            <a href="projects.html#top">Projects</a> /
-            <a href="#top">Articles</a> /
-            <a href="contact.html#top">Contact</a>
-        </nav>
-    </header>
-    <main>
-        <article>
-            <h4 class="title">Why I Chose Backend Development: The Myth of Artistic Talent</h4>
-            <p class="items"><small>[August 8, 2026]</small>When I started my programming journey, I worried about
-                lacking an artistic
-                eye for design or color selection. I soon
-                realized that building software doesn't require being an artist; companies rely on UI/UX designers for
-                interfaces, while
-                a Backend developer focuses on the internal engine and databases. Letting go of visual design to focus
-                purely on logic,
-                structured data processing, and mathematics was the right decision to build a rock-solid engineering
-                foundation.</p>
-        </article>
-        <article>
-            <h4 class="title">The Only Frontend Basics a Backend Developer Actually Needs</h4>
-            <p class="items"><small>[August 9, 2026]</small>When looking at developer roadmaps, many beginners fall into
-                the trap of
-                trying to master everything in HTML, CSS, and
-                JavaScript before touching servers. The reality is that a Backend developer doesn't need visual styling
-                at all. All you
-                need is an understanding of how data flows between the browser and server, how HTML Forms submit HTTP
-                requests, and how
-                to handle raw JSON responses. Bypassing unnecessary visual details saves weeks of distraction.</p>
-        </article>
-        <article>
-            <h4 class="title">The Myth of Learning 100% of a Language Before Building Projects</h4>
-            <p class="items"><small>[August 9, 2026]</small>The main reason beginners get stuck in "tutorial hell" is
-                believing they
-                must master every feature and library in a
-                language before writing real code. Applying the 80/20 rule proves that learning just 20% of core
-                fundamentals
-                (variables, conditions, functions, and basic OOP) is enough to ship your first application or API.
-                Advanced concepts and
-                complex edge cases aren't learned theoretically—they are absorbed naturally while practicing and
-                debugging real-world
-                code.</p>
-        </article>
-        <article>
-            <h4 class="title">Why I Chose to Build My Site with Pure HTML5</h4>
-            <p class="items"><small>[August 18, 2026]</small>Many modern developers rely heavily on complex frameworks
-                and bloated
-                libraries even for simple projects. For this site,
-                I decided to go back to the basics. Building with clean HTML5 and minimal CSS grants full control,
-                lightning-fast load
-                times, and a deeper understanding of how the web actually works. Relying on semantic tags over heavy
-                boilerplate code
-                was the best decision for building a solid foundation.</p>
-        </article>
-        <article>
-            <h4 class="title">My Journey with Flexbox: From Chaos to Order</h4>
-            <p class="items"><small>[August 10, 2026]</small>Aligning elements on a webpage used to be a frustrating
-                experience with
-                old CSS hacks. Discovering Flexbox completely
-                transformed my layout workflow. Simple properties like justify-content and align-items make positioning
-                intuitive and
-                predictable. Whether pushing elements to the right, centering content, or maintaining clean spacing,
-                Flexbox handles it
-                smoothly.</p>
-        </article>
-        <article>
-            <h4 class="title">The Power of Internal CSS in Small Projects</h4>
-            <p class="items"><small>[August 2, 2026]</small> When starting out, inline styles seem quick and easy.
-                However, they
-                quickly turn your markup into a messy,
-                unmaintainable block of code. Moving styles into a central &lt;style&gt; block using CSS classes
-                instantly cleaned up my HTML. It keeps the structure readable while allowing layout rules to be reused
-                efficiently across multiple elements.</p>
-        </article>
-        <section>
-            <h4 class="title">US:</h4>
-            <ul class="items" style="display: flex; list-style: none; gap: 15px; margin-top: 0;">
-                <li><a href="contact.html">
-                        <figure style="text-align: center;">
-                            <img src="res/circle-user-round.svg">
-                            <figcaption> Contact page</figcaption>
-                        </figure>
-                    </a>
-                </li>
-                <li><a href="projects.html">
-                        <figure style="text-align: center;">
-                            <img src="res/folder-bookmark.svg">
-                            <figcaption> My project </figcaption>
-                        </figure>
-                    </a>
-                </li>
-            </ul>
-        </section>
-    </main>
-    <footer style="display: flex; justify-content:flex-end;">
-        <div style="text-align: center;">
-            <div>
-                <ul style="list-style: none; display: flex ;gap: 20px; justify-content: center;">
-                    <li><a href="#top"><img src="res/circle-arrow-up.svg"></a></li>
-                    <li><a href="contact.html"><img src="res/circle-user-round.svg"></a></li>
-                </ul>
-            </div>
-            <p><small> built with <b>HTML5</b>-only , &copy; all rights reserved 2026 </small></p>
+  <!-- Background Canvas Layer -->
+  <div class="background-canvas" aria-hidden="true"></div>
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <!-- Floating Center-Bottom Dock Bar -->
+  <aside class="floating-dock-bar" id="floating-center-dock" aria-label="Quick Navigation Dock">
+    <a href="index.html#top" class="dock-logo-btn" title="Back to Home" aria-label="Back to Home">
+      <img src="res/portfolio.jpg" alt="Mohamed Benkhira" class="dock-avatar-img">
+    </a>
+
+    <div class="dock-divider"></div>
+
+    <ul class="dock-nav-list">
+      <li class="dock-item">
+        <a href="index.html#top" class="dock-link-btn" aria-label="Home">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+        </a>
+        <span class="dock-tooltip">Home</span>
+      </li>
+
+      <li class="dock-item">
+        <a href="index.html#journey" class="dock-link-btn" aria-label="Roadmap">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
+        <span class="dock-tooltip">Roadmap</span>
+      </li>
+
+      <li class="dock-item">
+        <a href="resume.html" class="dock-link-btn" aria-label="Resume">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+          </svg>
+        </a>
+        <span class="dock-tooltip">Resume</span>
+      </li>
+
+      <li class="dock-item">
+        <a href="projects.html" class="dock-link-btn" aria-label="Projects">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          </svg>
+        </a>
+        <span class="dock-tooltip">Projects</span>
+      </li>
+
+      <li class="dock-item">
+        <a href="articl.html" class="dock-link-btn active" aria-label="Articles">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="12 8 8 12 12 16 16 12 12 8"></polygon>
+          </svg>
+        </a>
+        <span class="dock-tooltip">Articles</span>
+      </li>
+
+      <li class="dock-item">
+        <a href="contact.html" class="dock-link-btn" aria-label="Contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </a>
+        <span class="dock-tooltip">Contact</span>
+      </li>
+    </ul>
+
+    <div class="dock-divider"></div>
+
+    <div class="dock-item">
+      <button type="button" class="dock-link-btn theme-toggle-trigger" aria-label="Toggle Theme">
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+      <span class="dock-tooltip">Toggle Theme</span>
+    </div>
+  </aside>
+
+  <div class="app-container">
+    <!-- Top Editorial Liquid Glass Header -->
+    <header class="site-header editorial-header">
+      <a href="index.html#top" class="logo-btn" title="About Mohamed Benkhira" aria-label="Go to Home">
+        <div class="logo-circle">
+          <img src="res/portfolio.jpg" alt="Mohamed Benkhira" class="logo-avatar-img">
         </div>
+        <div class="logo-text">
+          <span class="logo-name">Mohamed Benkhira</span>
+          <span class="logo-role">Backend Engineer &bull; CS ENPO</span>
+        </div>
+      </a>
+
+      <nav aria-label="Primary Navigation" class="editorial-nav">
+        <a href="index.html#top" class="editorial-nav-item">HOME</a>
+        <span class="slash-divider">/</span>
+        <a href="index.html#journey" class="editorial-nav-item">ROADMAP</a>
+        <span class="slash-divider">/</span>
+        <a href="resume.html" class="editorial-nav-item">RESUME</a>
+        <span class="slash-divider">/</span>
+        <a href="projects.html" class="editorial-nav-item">PROJECTS</a>
+        <span class="slash-divider">/</span>
+        <a href="articl.html" class="editorial-nav-item active">ARTICLES</a>
+        <span class="slash-divider">/</span>
+        <a href="contact.html" class="editorial-nav-item">CONTACT</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="theme-toggle-btn theme-toggle-trigger" id="theme-toggle-btn" aria-label="Toggle Theme (Light / Dark Mode)">
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <section class="contact-hero-header">
+        <span class="section-tag">Engineering Thoughts & Reflections</span>
+        <h1 class="section-title">Technical Insights & Dial Orbit</h1>
+        <p class="section-subtitle">Perspectives on backend logic, pragmatic learning curves, data flow, and modern web architectures.</p>
+      </section>
+
+      <!-- Revolving Dial Wheel Section -->
+      <section class="article-dial-section" style="padding-top: 10px; padding-bottom: 50px;">
+        <div class="dial-section-header">
+          <div class="dial-side-caption left">MULTIPLE TECH DOMAINS</div>
+          <div class="dial-side-caption right">SYSTEM ARCHITECTURE</div>
+        </div>
+
+        <div class="article-dial-stage-wrapper">
+          <div class="dial-wheel-orbit" id="article-dial-wheel">
+            <!-- 10 circular cards with photographic covers & counter-rotation -->
+            <div class="dial-card-node" style="--i: 0;" data-article-id="1">
+              <div class="dial-card-inner">
+                <img src="res/art-backend.jpg" alt="Backend Mindset" class="dial-card-photo">
+                <div class="dial-card-scrim"></div>
+                <div class="dial-node-meta">
+                  <span class="dial-node-tag">ARCHITECTURE</span>
+                  <span class="dial-node-title">Backend Mindset</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dial-card-node" style="--i: 1;" data-article-id="2">
+              <div class="dial-card-inner">
+                <img src="res/art-frontend.jpg" alt="Frontend Basics" class="dial-card-photo">
+                <div class="dial-card-scrim"></div>
+                <div class="dial-node-meta">
+                  <span class="dial-node-tag">INTERFACE</span>
+                  <span class="dial-node-title">Frontend Basics</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dial-card-node" style="--i: 2;" data-article-id="3">
+              <div class="dial-card-inner">
+                <img src="res/art-apis.jpg" alt="Modular APIs" class="dial-card-photo">
+                <div class="dial-card-scrim"></div>
+                <div class="dial-node-meta">
+                  <span class="dial-node-tag">SERVICES</span>
+                  <span class="dial-node-title">Modular APIs</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dial-card-node" style="--i: 3;" data-article-id="1">
+              <div class="dial-card-inner">
+                <img src="res/art-db.jpg" onerror="this.onerror=null; this.src='res/art-db.svg';" alt="Database Schemas" class="dial-card-photo">
+                <div class="dial-card-scrim"></div>
+                <div class="dial-node-meta">
+                  <span class="dial-node-tag">STORAGE</span>
+                  <span class="dial-node-title">DB Schemas</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dial-card-node" style="--i: 4;" data-article-id="2">
+              <div class="dial-card-inner">
+                <img src="res/art-docker.jpg" onerror="this.onerror=null; this.src='res/art-docker.svg';" alt="Dockerization" class="dial-card-photo">
+                <div class="dial-card-scrim"></div>
+                <div class="dial-node-meta">
+                  <span class="dial-node-tag">DEVOPS</span>
+                  <span class="dial-node-title">Docker Containers</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dial-card-node" style="--i: 5;" data-article-id="3">
+              <div class="dial-card-inner">
+                <img src="res/art-redis.jpg" onerror="this.onerror=null; this.src='res/art-redis.svg';" alt="Redis Cache" class="dial-card-photo">
+                <div class="dial-card-scrim"></div>
+                <div class="dial-node-meta">
+                  <span class="dial-node-tag">CACHING</span>
+                  <span class="dial-node-title">Redis In-Memory</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dial-card-node" style="--i: 6;" data-article-id="1">
+              <div class="dial-card-inner">
+                <img src="res/art-security.jpg" onerror="this.onerror=null; this.src='res/art-security.svg';" alt="API Security" class="dial-card-photo">
+                <div class="dial-card-scrim"></div>
+                <div class="dial-node-meta">
+                  <span class="dial-node-tag">SECURITY</span>
+                  <span class="dial-node-title">API Authentication</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dial-card-node" style="--i: 7;" data-article-id="2">
+              <div class="dial-card-inner">
+                <img src="res/art-queues.jpg" onerror="this.onerror=null; this.src='res/art-queues.svg';" alt="Async Queues" class="dial-card-photo">
+                <div class="dial-card-scrim"></div>
+                <div class="dial-node-meta">
+                  <span class="dial-node-tag">PIPELINES</span>
+                  <span class="dial-node-title">Async Tasks</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dial-card-node" style="--i: 8;" data-article-id="3">
+              <div class="dial-card-inner">
+                <img src="res/art-python.jpg" onerror="this.onerror=null; this.src='res/art-python.svg';" alt="Python 3 OOP" class="dial-card-photo">
+                <div class="dial-card-scrim"></div>
+                <div class="dial-node-meta">
+                  <span class="dial-node-tag">CORE PYTHON</span>
+                  <span class="dial-node-title">OOP Architecture</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dial-card-node" style="--i: 9;" data-article-id="1">
+              <div class="dial-card-inner">
+                <img src="res/art-clean.jpg" onerror="this.onerror=null; this.src='res/art-clean.svg';" alt="Clean Systems" class="dial-card-photo">
+                <div class="dial-card-scrim"></div>
+                <div class="dial-node-meta">
+                  <span class="dial-node-tag">PATTERNS</span>
+                  <span class="dial-node-title">Clean Systems</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Filter Bar -->
+      <div class="article-filter-bar" aria-label="Filter articles by category">
+        <button type="button" class="filter-chip active">All Reflections</button>
+        <button type="button" class="filter-chip">Backend Mindset</button>
+        <button type="button" class="filter-chip">Frontend Pragmatism</button>
+        <button type="button" class="filter-chip">Database & Systems</button>
+      </div>
+
+      <!-- Articles Grid -->
+      <div style="display: flex; flex-direction: column; gap: 24px; max-width: 920px; margin: 0 auto;">
+        <!-- Article 1 -->
+        <article class="article-card-enhanced" id="article-item-1">
+          <div class="article-header-meta">
+            <span class="article-badge-chip">Backend Mindset</span>
+            <span class="article-read-time">August 8, 2026 &bull; 4 min read</span>
+          </div>
+
+          <h2 class="article-title-heading">Why I Chose Backend Development: The Myth of Artistic Talent</h2>
+
+          <p class="article-body-p">
+            When I started programming, I worried about lacking an artistic eye for visual aesthetics or color combinations. I soon realized building software doesn't require being a visual artist; companies rely on dedicated UI/UX designers for visual interfaces, while a backend developer builds the internal engine, scalable endpoints, and reliable data pipelines.
+          </p>
+          <p class="article-body-p">
+            Focusing purely on logic, structured algorithms, database normalization, and system reliability was the best decision for my engineering foundation. It allows me to solve deeply intellectual problems without worrying about CSS pixel alignments.
+          </p>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="article-card-enhanced" id="article-item-2">
+          <div class="article-header-meta">
+            <span class="article-badge-chip">Frontend Pragmatism</span>
+            <span class="article-read-time">August 9, 2026 &bull; 3 min read</span>
+          </div>
+
+          <h2 class="article-title-heading">The Only Frontend Basics a Backend Developer Actually Needs</h2>
+
+          <p class="article-body-p">
+            You do not need to master complex client-side framework lifecycles or state libraries like Redux to be an exceptional backend engineer. Understanding fundamental semantic HTML, basic DOM structure, and how fetch/XHR requests transmit JSON payloads is sufficient to build functional administrative consoles, prototype internal dashboards, and debug full-stack communication.
+          </p>
+          <p class="article-body-p">
+            By keeping frontend dependencies minimal and leveraging structured API specifications like OpenAPI, the backend engineer delivers maximum business value with minimum bloat.
+          </p>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="article-card-enhanced" id="article-item-3">
+          <div class="article-header-meta">
+            <span class="article-badge-chip">Systems & Scalability</span>
+            <span class="article-read-time">August 12, 2026 &bull; 5 min read</span>
+          </div>
+
+          <h2 class="article-title-heading">Building Robust APIs: From Monoliths to Modular Services</h2>
+
+          <p class="article-body-p">
+            In modern software architecture, starting with a clean, modular monolith is almost always superior to premature microservice fragmentation. By isolating domain logic into decoupled packages and enforcing strict API contracts, we maintain high engineering velocity while retaining the simplicity of single-unit deployments.
+          </p>
+        </article>
+      </div>
+    </main>
+
+    <!-- Modal Reader -->
+    <div class="article-modal-backdrop" id="article-reader-modal" aria-hidden="true">
+      <div class="article-modal-card">
+        <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">&times;</button>
+        <span class="article-badge-chip" id="modal-article-tag">Backend Mindset</span>
+        <h2 id="modal-article-title" style="font-size: 1.6rem;">Why I Chose Backend Development: The Myth of Artistic Talent</h2>
+        <div id="modal-article-body" style="font-size: 1rem; color: var(--text-muted); line-height: 1.8;">
+          <p>
+            When I started programming, I worried about lacking an artistic eye for visual aesthetics or color combinations. I soon realized building software doesn't require being a visual artist; companies rely on dedicated UI/UX designers for visual interfaces, while a backend developer builds the internal engine, scalable endpoints, and reliable data pipelines.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <span style="font-weight: 700; font-family: var(--font-display); font-size: 1.1rem;">Mohamed Benkhira</span>
+        <span class="footer-copy">&copy; 2026 Mohamed Benkhira &bull; Articles & Insights</span>
+      </div>
+
+      <ul class="footer-social-list" aria-label="Social Links">
+        <li>
+          <a href="https://github.com/benm07amed48-netizen" target="_blank" class="footer-social-btn" title="GitHub">
+            <img src="res/icons8-github-96.png" alt="GitHub">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/mohamed-benkhira-571951284" target="_blank" class="footer-social-btn" title="LinkedIn">
+            <img src="res/icons8-linkedin-96.png" alt="LinkedIn">
+          </a>
+        </li>
+        <li>
+          <a href="contact.html" class="footer-social-btn" title="Contact">
+            <img src="res/mail.svg" alt="Email">
+          </a>
+        </li>
+        <li>
+          <a href="#top" class="back-to-top-btn" title="Back to Top" aria-label="Back to Top">
+            <img src="res/circle-arrow-up.svg" alt="Up Arrow">
+          </a>
+        </li>
+      </ul>
     </footer>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 
 </html>

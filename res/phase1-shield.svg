@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="100%" height="100%">
+  <defs>
+    <!-- Soft Studio Backdrop -->
+    <radialGradient id="studioBg1" cx="50%" cy="40%" r="75%">
+      <stop offset="0%" stop-color="#fdfbf7"/>
+      <stop offset="50%" stop-color="#f3ede2"/>
+      <stop offset="100%" stop-color="#e5dccf"/>
+    </radialGradient>
+
+    <!-- Clay Material Gradients -->
+    <linearGradient id="clayIvory" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="40%" stop-color="#f5efe6"/>
+      <stop offset="100%" stop-color="#d8cbba"/>
+    </linearGradient>
+
+    <linearGradient id="clayTerracotta" x1="10%" y1="0%" x2="90%" y2="100%">
+      <stop offset="0%" stop-color="#fb923c"/>
+      <stop offset="45%" stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#9a3412"/>
+    </linearGradient>
+
+    <linearGradient id="clayGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="40%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+
+    <linearGradient id="clayEspresso" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3d2315"/>
+      <stop offset="60%" stop-color="#241208"/>
+      <stop offset="100%" stop-color="#140904"/>
+    </linearGradient>
+
+    <!-- Clay Plinth Platform -->
+    <linearGradient id="clayPedestal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ede4d8"/>
+      <stop offset="100%" stop-color="#cfbeaa"/>
+    </linearGradient>
+
+    <!-- 3D Soft Ambient Shadow Filters -->
+    <filter id="clayShadowBig" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="28" stdDeviation="22" flood-color="#785338" flood-opacity="0.22"/>
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#4a3120" flood-opacity="0.14"/>
+    </filter>
+
+    <filter id="clayShadowSmall" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#543722" flood-opacity="0.25"/>
+    </filter>
+
+    <filter id="clayGroundShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <!-- Studio Background -->
+  <rect width="100%" height="100%" fill="url(#studioBg1)" rx="28"/>
+
+  <!-- Pedestal Floor Ground Shadow -->
+  <ellipse cx="300" cy="405" rx="200" ry="32" fill="#8c6a50" opacity="0.28" filter="url(#clayGroundShadow)"/>
+
+  <!-- 3D Clay Cylindrical Plinth / Base -->
+  <g transform="translate(140, 340)">
+    <path d="M0,35 C0,15 70,0 160,0 C250,0 320,15 320,35 L320,60 C320,80 250,95 160,95 C70,95 0,80 0,60 Z" fill="url(#clayPedestal)"/>
+    <ellipse cx="160" cy="35" rx="160" ry="35" fill="#f5ede3"/>
+    <ellipse cx="160" cy="35" rx="145" ry="30" fill="url(#clayIvory)"/>
+  </g>
+
+  <!-- 3D Main Clay Shield Crest (Floating) -->
+  <g filter="url(#clayShadowBig)" transform="translate(300, 200)">
+    <!-- Shield Outer Shell -->
+    <path d="M0,-120 C85,-120 125,-75 125,15 C125,105 60,155 0,180 C-60,155 -125,105 -125,15 C-125,-75 -85,-120 0,-120 Z" 
+          fill="url(#clayIvory)"/>
+
+    <!-- Shield Terracotta Bevel Layer -->
+    <path d="M0,-102 C70,-102 105,-62 105,12 C105,88 50,132 0,155 C-50,132 -105,88 -105,12 C-105,-62 -70,-102 0,-102 Z" 
+          fill="url(#clayTerracotta)"/>
+
+    <!-- Shield Inner Core (Deep Espresso) -->
+    <path d="M0,-85 C55,-85 85,-50 85,10 C85,72 40,110 0,130 C-40,110 -85,72 -85,10 C-85,-50 -55,-85 0,-85 Z" 
+          fill="url(#clayEspresso)"/>
+
+    <!-- 3D Golden Academic Compass & Gear (Centerpiece) -->
+    <g filter="url(#clayShadowSmall)" transform="translate(0, 10)">
+      <!-- Golden Gear Rim -->
+      <circle cx="0" cy="0" r="48" fill="url(#clayGold)"/>
+      <circle cx="0" cy="0" r="32" fill="#241208"/>
+
+      <!-- 8 Gear Teeth -->
+      <rect x="-8" y="-56" width="16" height="12" rx="4" fill="url(#clayGold)"/>
+      <rect x="-8" y="44" width="16" height="12" rx="4" fill="url(#clayGold)"/>
+      <rect x="-56" y="-8" width="12" height="16" rx="4" fill="url(#clayGold)"/>
+      <rect x="44" y="-8" width="12" height="16" rx="4" fill="url(#clayGold)"/>
+
+      <!-- Golden Polytechnic Star Core -->
+      <polygon points="0,-24 7,-7 24,0 7,7 0,24 -7,7 -24,0 -7,-7" fill="#ffffff"/>
+      <circle cx="0" cy="0" r="6" fill="#ea580c"/>
+    </g>
+
+    <!-- Floating Clay Beads / Highlights -->
+    <circle cx="-70" cy="-60" r="12" fill="url(#clayGold)" filter="url(#clayShadowSmall)"/>
+    <circle cx="75" cy="-45" r="10" fill="url(#clayIvory)" filter="url(#clayShadowSmall)"/>
+    <circle cx="85" cy="55" r="14" fill="url(#clayTerracotta)" filter="url(#clayShadowSmall)"/>
+  </g>
+</svg>

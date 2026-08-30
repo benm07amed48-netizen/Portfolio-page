@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="studioBg5" cx="50%" cy="40%" r="75%">
+      <stop offset="0%" stop-color="#fdfbf7"/>
+      <stop offset="50%" stop-color="#f3ede2"/>
+      <stop offset="100%" stop-color="#e5dccf"/>
+    </radialGradient>
+
+    <linearGradient id="clayGold5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="40%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+
+    <linearGradient id="clayTerracotta5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb923c"/>
+      <stop offset="45%" stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#9a3412"/>
+    </linearGradient>
+
+    <filter id="clayShadowBig5" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="28" stdDeviation="22" flood-color="#785338" flood-opacity="0.22"/>
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#4a3120" flood-opacity="0.14"/>
+    </filter>
+
+    <filter id="clayShadowSmall5" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#543722" flood-opacity="0.25"/>
+    </filter>
+
+    <filter id="clayGroundShadow5" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <!-- Studio Background -->
+  <rect width="100%" height="100%" fill="url(#studioBg5)" rx="28"/>
+
+  <!-- Pedestal Floor Ground Shadow -->
+  <ellipse cx="300" cy="410" rx="210" ry="32" fill="#8c6a50" opacity="0.28" filter="url(#clayGroundShadow5)"/>
+
+  <!-- 3D Clay Cylindrical Plinth / Base -->
+  <g transform="translate(140, 345)">
+    <path d="M0,35 C0,15 70,0 160,0 C250,0 320,15 320,35 L320,60 C320,80 250,95 160,95 C70,95 0,80 0,60 Z" fill="#ede4d8"/>
+    <ellipse cx="160" cy="35" rx="160" ry="35" fill="#f5ede3"/>
+    <ellipse cx="160" cy="35" rx="145" ry="30" fill="#ede4d8"/>
+  </g>
+
+  <!-- 3D Soft Clay Gold Star Trophy (Floating Studio Composition) -->
+  <g filter="url(#clayShadowBig5)" transform="translate(300, 185)">
+    <!-- 3D Golden Star Centerpiece -->
+    <polygon points="0,-115 32,-35 118,-35 48,15 75,95 0,45 -75,95 -48,15 -118,-35 -32,-35" 
+             fill="url(#clayGold5)" stroke="#ffffff" stroke-width="4"/>
+
+    <!-- Inner Embossed Star Core -->
+    <polygon points="0,-85 24,-25 85,-25 35,10 55,70 0,32 -55,70 -35,10 -85,-25 -24,-25" 
+             fill="#fef08a" opacity="0.85"/>
+
+    <!-- 3D Laurel Wreath Branches (Surrounding Base) -->
+    <g transform="translate(0, 45)">
+      <!-- Left Laurel Branch -->
+      <path d="M-20,40 C-80,25 -110,-40 -85,-85" fill="none" stroke="url(#clayTerracotta5)" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="-50" cy="20" r="10" fill="url(#clayTerracotta5)"/>
+      <circle cx="-80" cy="-10" r="10" fill="url(#clayTerracotta5)"/>
+      <circle cx="-85" cy="-55" r="10" fill="url(#clayTerracotta5)"/>
+
+      <!-- Right Laurel Branch -->
+      <path d="M20,40 C80,25 110,-40 85,-85" fill="none" stroke="url(#clayTerracotta5)" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="50" cy="20" r="10" fill="url(#clayTerracotta5)"/>
+      <circle cx="80" cy="-10" r="10" fill="url(#clayTerracotta5)"/>
+      <circle cx="85" cy="-55" r="10" fill="url(#clayTerracotta5)"/>
+    </g>
+
+    <!-- Floating Distinction Clay Beads -->
+    <circle cx="120" cy="-75" r="14" fill="#fb923c" filter="url(#clayShadowSmall5)"/>
+    <circle cx="-125" cy="-60" r="10" fill="#fef08a" filter="url(#clayShadowSmall5)"/>
+    <circle cx="0" cy="115" r="16" fill="url(#clayGold5)" filter="url(#clayShadowSmall5)"/>
+  </g>
+</svg>

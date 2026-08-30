@@ -1,287 +1,315 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
-    <style>
-        :root {
-            --bg: #07111d;
-            --bg-soft: #0d1729;
-            --panel: rgba(15, 23, 42, 0.9);
-            --panel-alt: rgba(17, 24, 39, 0.96);
-            --line: rgba(148, 163, 184, 0.25);
-            --text: #e5edf8;
-            --muted: #a7b3c7;
-            --accent: #67e8f9;
-            --accent-2: #8b5cf6;
-            --shadow: 0 20px 45px rgba(2, 6, 23, 0.45);
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            padding: 24px;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            background: radial-gradient(circle at top, rgba(103, 232, 249, 0.1), transparent 30%),
-                linear-gradient(135deg, #020817 0%, #0b1324 50%, #111827 100%);
-            color: var(--text);
-            border: 1px solid var(--line);
-            min-height: 100vh;
-        }
-
-        a {
-            color: var(--accent);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        a:hover {
-            color: #dff9ff;
-        }
-
-        header,
-        main,
-        footer {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 24px;
-            margin-bottom: 20px;
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            background: rgba(15, 23, 42, 0.72);
-            box-shadow: var(--shadow);
-        }
-
-        header div {
-            font-size: 1.1rem;
-            letter-spacing: 0.04em;
-            font-weight: 700;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            color: var(--muted);
-        }
-
-        nav a {
-            padding: 6px 10px;
-            border-radius: 999px;
-            color: var(--muted);
-        }
-
-        nav a:hover,
-        nav a:focus {
-            background: rgba(103, 232, 249, 0.08);
-            color: var(--text);
-        }
-
-        main {
-            display: grid;
-            gap: 22px;
-        }
-
-        section {
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            padding: 24px 26px;
-            box-shadow: var(--shadow);
-            text-align: left;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4 {
-            color: #f8fbff;
-            margin-top: 0;
-        }
-
-        p,
-        li,
-        small {
-            color: var(--muted);
-            line-height: 1.7;
-        }
-
-        .centered {
-            text-align: center;
-        }
-
-        .items {
-            margin-top: 0;
-            padding-left: 18px;
-        }
-
-        .items li {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .des {
-            margin-bottom: 0;
-        }
-
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        ul li {
-            margin-bottom: 8px;
-        }
-
-        footer {
-            padding: 24px 0 10px;
-        }
-
-        footer>div {
-            text-align: center;
-        }
-
-        footer ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            padding: 0;
-            margin: 0 0 12px;
-        }
-
-        footer img {
-            width: 32px;
-            height: 32px;
-            filter: drop-shadow(0 0 10px rgba(103, 232, 249, 0.3));
-        }
-    </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Junior Back-End & Python Developer PROJECTS">
-    <meta property="og:title" content="BENKHIRA MOHAMED - PROJECTS">
-    <meta property="og:description" content="Python Back-End Engineer PROJECTS">
-    <meta property="og:image" content="res/portfolio.jpg">
-    <meta name="copyright" content="MOHAMED" />
-    <link rel="icon" href="res/folder-bookmark.svg" type="image/svg+xml">
-    <title> MY projects </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects & Production Builds | Mohamed Benkhira</title>
+  <meta name="description" content="Explore backend systems, REST APIs, Python applications, and full-stack platforms developed by Mohamed Benkhira.">
+  
+  <link rel="icon" href="res/ico.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body id="top">
-    <header>
-        <div><b>Mohamed benkhira</b></div>
-        <nav>
-            <a href="index.html#top">Home</a> /
-            <a href="#top">Projects</a> /
-            <a href="articl.html#top">Articles</a> /
-            <a href="contact.html#top">Contact</a>
-        </nav>
-    </header>
-    <main>
-        <section class="centered">
-            <h1>My Projects</h1>
-            <p> I hope that my projects are to your liking.</p>
-        </section>
-        <section>
-            <h3>the N°1 BAC preparation platform :</h3>
-            <p class="des">sorry but i cannot provide you with any further details due to the copy rights being reserved
-                by the team </p>
-            <ul class="items">
-                <li><a href=""><img src="res/radio.svg"> <b>Sooner</b> </a></li>
-                <li><a href=""><img src="res/book-marked.svg"> the repository won't be shared</a></li>
-            </ul>
-        </section>
-        <section>
-            <h3>The Resume page :</h3>
-            <p class="des">this project represents my own cv page and it's always under development so never get
-                disappointed the first time for more details or personal checking proceed :</p>
-            <ul class="items">
-                <li><a target="_blank" href="https://benm07amed48-netizen.github.io/CV-page/"><img src="res/radio.svg">
-                        Live Demo</a></li>
-                <li><a target="_blank" href="https://github.com/benm07amed48-netizen/CV-page"><img
-                            src="res/book-marked.svg"> project repository</a></li>
-            </ul>
-        </section>
-        <section>
-            <h3>CLI python-only store</h3>
-            <p class="des"> a CLI local store for shop owners the project allows adding,removing and checking the
-                availibility the projects is under development to provide it with a UI and further backend improvement
-            </p>
-            <ul class="items">
-                <li><a target="_blank" href=""><img src="res/radio.svg"> the store wasn't published online</a></li>
-                <li><a target="_blank" href=""><img src="res/book-marked.svg"> sorry but the files have been lost</a>
-                </li>
-            </ul>
-        </section>
-        <section>
-            <h3>The portfolio :</h3>
-            <p class="des">are to your liking represent my own portfolio and it's the site in front of you for more
-                details or
-                personal checking proceed :</p>
-            <ul class="items">
-                <li><a target="_blank" href="#"><img src="res/radio.svg"> Live Demo</a></li>
-                <li><a target="_blank" href="https://github.com/benm07amed48-netizen/Portfolio-page"><img
-                            src="res/book-marked.svg"> project repository</a>
-                </li>
-            </ul>
-        </section>
-        <section>
-            <h3> Other Projects:</h3>
-            <p class="des"> i will publish more projects into this page or maybe i will recreate another page more
-                professional .</p>
-            <ul class="items">
-                <li><a target="_blank" href="contact.html"><img src="res/circle-user-round.svg"> check the contact page
-                    </a></li>
-            </ul>
-        </section>
-        <section>
-            <h3 class="des">US :</h3>
-            <ul class="items" style="display: flex; list-style: none; gap: 15px;">
-                <li><a href="contact.html">
-                        <figure style="text-align: center;">
-                            <img src="res/circle-user-round.svg">
-                            <figcaption> Contact page</figcaption>
-                        </figure>
-                    </a>
-                </li>
-                <li><a href="articl.html">
-                        <figure style="text-align: center;">
-                            <img src="res/file-text.svg">
-                            <figcaption> My articles </figcaption>
-                        </figure>
-                    </a>
-                </li>
-            </ul>
+  <!-- Background Canvas Layer -->
+  <div class="background-canvas" aria-hidden="true"></div>
+  <div class="ambient-glow" aria-hidden="true"></div>
 
+  <!-- Floating Center-Bottom Dock Bar -->
+  <aside class="floating-dock-bar" id="floating-center-dock" aria-label="Quick Navigation Dock">
+    <a href="index.html#top" class="dock-logo-btn" title="Back to Home" aria-label="Back to Home">
+      <img src="res/portfolio.jpg" alt="Mohamed Benkhira" class="dock-avatar-img">
+    </a>
 
-        </section>
-    </main>
-    <footer style="display: flex; justify-content:flex-end;">
-        <div style="text-align: center;">
-            <div>
-                <ul style="list-style: none; display: flex ;gap: 20px; justify-content: center;">
-                    <li><a href="#top"><img src="res/circle-arrow-up.svg"></a></li>
-                    <li><a href="contact.html"><img src="res/circle-user-round.svg"></a></li>
-                </ul>
-            </div>
-            <p><small> built with <b>HTML5</b>-only , &copy; all rights reserved 2026 </small></p>
+    <div class="dock-divider"></div>
+
+    <ul class="dock-nav-list">
+      <li class="dock-item">
+        <a href="index.html#top" class="dock-link-btn" aria-label="Home">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+        </a>
+        <span class="dock-tooltip">Home</span>
+      </li>
+
+      <li class="dock-item">
+        <a href="index.html#journey" class="dock-link-btn" aria-label="Roadmap">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
+        <span class="dock-tooltip">Roadmap</span>
+      </li>
+
+      <li class="dock-item">
+        <a href="resume.html" class="dock-link-btn" aria-label="Resume">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+          </svg>
+        </a>
+        <span class="dock-tooltip">Resume</span>
+      </li>
+
+      <li class="dock-item">
+        <a href="projects.html" class="dock-link-btn active" aria-label="Projects">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          </svg>
+        </a>
+        <span class="dock-tooltip">Projects</span>
+      </li>
+
+      <li class="dock-item">
+        <a href="articl.html" class="dock-link-btn" aria-label="Articles">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="12 8 8 12 12 16 16 12 12 8"></polygon>
+          </svg>
+        </a>
+        <span class="dock-tooltip">Articles</span>
+      </li>
+
+      <li class="dock-item">
+        <a href="contact.html" class="dock-link-btn" aria-label="Contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </a>
+        <span class="dock-tooltip">Contact</span>
+      </li>
+    </ul>
+
+    <div class="dock-divider"></div>
+
+    <div class="dock-item">
+      <button type="button" class="dock-link-btn theme-toggle-trigger" aria-label="Toggle Theme">
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+      <span class="dock-tooltip">Toggle Theme</span>
+    </div>
+  </aside>
+
+  <div class="app-container">
+    <!-- Top Editorial Liquid Glass Header -->
+    <header class="site-header editorial-header">
+      <a href="index.html#top" class="logo-btn" title="About Mohamed Benkhira" aria-label="Go to Home">
+        <div class="logo-circle">
+          <img src="res/portfolio.jpg" alt="Mohamed Benkhira" class="logo-avatar-img">
         </div>
+        <div class="logo-text">
+          <span class="logo-name">Mohamed Benkhira</span>
+          <span class="logo-role">Backend Engineer &bull; CS ENPO</span>
+        </div>
+      </a>
+
+      <nav aria-label="Primary Navigation" class="editorial-nav">
+        <a href="index.html#top" class="editorial-nav-item">HOME</a>
+        <span class="slash-divider">/</span>
+        <a href="index.html#journey" class="editorial-nav-item">ROADMAP</a>
+        <span class="slash-divider">/</span>
+        <a href="resume.html" class="editorial-nav-item">RESUME</a>
+        <span class="slash-divider">/</span>
+        <a href="projects.html" class="editorial-nav-item active">PROJECTS</a>
+        <span class="slash-divider">/</span>
+        <a href="articl.html" class="editorial-nav-item">ARTICLES</a>
+        <span class="slash-divider">/</span>
+        <a href="contact.html" class="editorial-nav-item">CONTACT</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="theme-toggle-btn theme-toggle-trigger" id="theme-toggle-btn" aria-label="Toggle Theme (Light / Dark Mode)">
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Projects Content -->
+    <main>
+      <section class="contact-hero-header">
+        <span class="section-tag">Curated Works & Applications</span>
+        <h1 class="section-title" style="font-size: clamp(2.2rem, 4vw, 3.2rem);">Featured Projects & Codebases</h1>
+        <p class="section-subtitle">Real-world production platforms, command-line utilities, and web services engineered with clean code architecture.</p>
+      </section>
+
+      <!-- Filter Bar -->
+      <div class="article-filter-bar" id="projects-filter-bar" aria-label="Filter projects by domain" style="margin-bottom: 36px;">
+        <button type="button" class="filter-chip active" data-category="all">All Systems</button>
+        <button type="button" class="filter-chip" data-category="backend">Backend &amp; Python</button>
+        <button type="button" class="filter-chip" data-category="platform">Web Platforms</button>
+        <button type="button" class="filter-chip" data-category="distributed">APIs &amp; Microservices</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid" id="projects-container">
+        <!-- Project 1: BAC Platform -->
+        <div class="project-card" data-category="platform">
+          <div class="project-image-wrap">
+            <img src="res/project-bac.jpg" onerror="this.onerror=null; this.src='res/project-bac-3d.svg';" alt="BAC Platform 3D Showcase" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="project-info">
+            <span class="project-badge">Full-Stack Educational Platform</span>
+            <h2 class="project-title">The N°1 BAC Preparation Platform</h2>
+            <p class="project-desc">
+              An all-in-one educational web platform built for Algerian high school students, featuring automated progress tracking analytics, subject modules, and local state persistence.
+            </p>
+            <div class="skills-pill-group" style="margin-top: 8px;">
+              <span class="skill-pill">HTML5 / CSS3</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">Local Storage</span>
+              <span class="skill-pill">Analytics</span>
+            </div>
+            <div class="project-footer" style="margin-top: 18px;">
+              <a href="https://benm07amed48-netizen.github.io/bac-site/" target="_blank" class="btn-primary" style="padding: 9px 20px; font-size: 0.84rem;">
+                <span>Visit Platform ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: CLI Store -->
+        <div class="project-card" data-category="backend">
+          <div class="project-image-wrap">
+            <img src="res/project-store.jpg" onerror="this.onerror=null; this.src='res/project-store-3d.svg';" alt="CLI Python-Only Store Engine 3D" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="project-info">
+            <span class="project-badge">Python Backend &amp; CLI</span>
+            <h2 class="project-title">CLI Python-Only Store Engine</h2>
+            <p class="project-desc">
+              A command-line enterprise point-of-sale and inventory management application built purely in Python, handling transactions, persistent storage, and tabular invoicing.
+            </p>
+            <div class="skills-pill-group" style="margin-top: 8px;">
+              <span class="skill-pill">Python 3</span>
+              <span class="skill-pill">File I/O &amp; Storage</span>
+              <span class="skill-pill">CLI Formatting</span>
+              <span class="skill-pill">OOP Architecture</span>
+            </div>
+            <div class="project-footer" style="margin-top: 18px;">
+              <a href="https://github.com/benm07amed48-netizen/Store-with-python-only" target="_blank" class="btn-primary" style="padding: 9px 20px; font-size: 0.84rem;">
+                <span>View on GitHub ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Distributed API Gateway -->
+        <div class="project-card" data-category="distributed">
+          <div class="project-image-wrap">
+            <img src="res/project-gateway.jpg" onerror="this.onerror=null; this.src='res/project-gateway-3d.svg';" alt="Distributed API Gateway 3D" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="project-info">
+            <span class="project-badge">High-Concurrency Gateway</span>
+            <h2 class="project-title">Distributed High-Concurrency API Gateway</h2>
+            <p class="project-desc">
+              A high-performance reverse-proxy and API gateway architecture featuring token rate limiting, Redis in-memory cache, and sub-15ms response latency under heavy load.
+            </p>
+            <div class="skills-pill-group" style="margin-top: 8px;">
+              <span class="skill-pill">FastAPI</span>
+              <span class="skill-pill">Redis Cache</span>
+              <span class="skill-pill">Docker</span>
+              <span class="skill-pill">PostgreSQL</span>
+            </div>
+            <div class="project-footer" style="margin-top: 18px;">
+              <a href="https://github.com/benm07amed48-netizen" target="_blank" class="btn-primary" style="padding: 9px 20px; font-size: 0.84rem;">
+                <span>View Repository ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Interactive CV -->
+        <div class="project-card" data-category="platform">
+          <div class="project-image-wrap">
+            <img src="res/project-cv.jpg" onerror="this.onerror=null; this.src='res/project-cv-3d.svg';" alt="Interactive Resume &amp; CV Page 3D" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="project-info">
+            <span class="project-badge">Interactive Experience Page</span>
+            <h2 class="project-title">Interactive Resume &amp; CV Page</h2>
+            <p class="project-desc">
+              A comprehensive web CV detailing academic history at ENPO Oran, technical proficiencies, course certifications, and contact pipelines.
+            </p>
+            <div class="skills-pill-group" style="margin-top: 8px;">
+              <span class="skill-pill">Web Resume</span>
+              <span class="skill-pill">Responsive Design</span>
+              <span class="skill-pill">Semantic HTML</span>
+            </div>
+            <div class="project-footer" style="margin-top: 18px;">
+              <a href="https://benm07amed48-netizen.github.io/CV-page/" target="_blank" class="btn-primary" style="padding: 9px 20px; font-size: 0.84rem;">
+                <span>Visit CV Live ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <span style="font-weight: 700; font-family: var(--font-display); font-size: 1.1rem;">Mohamed Benkhira</span>
+        <span class="footer-copy">&copy; 2026 Mohamed Benkhira &bull; Built with HTML5 & Vanilla CSS</span>
+      </div>
+
+      <ul class="footer-social-list" aria-label="Social and Contact Links">
+        <li>
+          <a href="https://github.com/benm07amed48-netizen" target="_blank" class="footer-social-btn" title="GitHub Profile">
+            <img src="res/icons8-github-96.png" alt="GitHub">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/mohamed-benkhira-571951284" target="_blank" class="footer-social-btn" title="LinkedIn Profile">
+            <img src="res/icons8-linkedin-96.png" alt="LinkedIn">
+          </a>
+        </li>
+        <li>
+          <a href="contact.html" class="footer-social-btn" title="Direct Contact">
+            <img src="res/mail.svg" alt="Contact Email">
+          </a>
+        </li>
+        <li>
+          <a href="#top" class="back-to-top-btn" title="Back to Top" aria-label="Back to Top">
+            <img src="res/circle-arrow-up.svg" alt="Up Arrow">
+          </a>
+        </li>
+      </ul>
     </footer>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 
 </html>

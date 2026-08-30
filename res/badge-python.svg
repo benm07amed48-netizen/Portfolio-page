@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="pyGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#387eb8"/>
+      <stop offset="100%" stop-color="#366994"/>
+    </linearGradient>
+    <linearGradient id="pyGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe873"/>
+      <stop offset="100%" stop-color="#ffd43b"/>
+    </linearGradient>
+    <filter id="badgeShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="currentColor" class="badge-bg" filter="url(#badgeShadow)" stroke="currentColor" stroke-opacity="0.15" stroke-width="1.5"/>
+  <g transform="translate(16, 16) scale(0.5)">
+    <path fill="url(#pyGrad1)" d="M31.88 0C14.63 0 15.7 7.5 15.7 7.5l.02 7.78h16.48v2.34H10.12S0 16.44 0 33.72c0 17.28 9.04 16.64 9.04 16.64h5.4v-7.92s-.29-9.04 8.9-9.04h15.42s8.61.14 8.61-8.38V7.5S49.13 0 31.88 0zm-8.86 5.16a2.66 2.66 0 1 1 0 5.32 2.66 2.66 0 0 1 0-5.32z"/>
+    <path fill="url(#pyGrad2)" d="M32.12 64c17.25 0 16.18-7.5 16.18-7.5l-.02-7.78H31.8V46.38h22.08s10.12 1.18 10.12-16.1c0-17.28-9.04-16.64-9.04-16.64h-5.4v7.92s.29 9.04-8.9 9.04H25.24s-8.61-.14-8.61 8.38v7.52S14.87 64 32.12 64zm8.86-5.16a2.66 2.66 0 1 1 0-5.32 2.66 2.66 0 0 1 0 5.32z"/>
+  </g>
+</svg>

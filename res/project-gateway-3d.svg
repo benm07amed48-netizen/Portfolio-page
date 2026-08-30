@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450" width="100%" height="100%">
+  <defs>
+    <radialGradient id="gatewayStudioBg" cx="50%" cy="40%" r="75%">
+      <stop offset="0%" stop-color="#2a1811"/>
+      <stop offset="60%" stop-color="#140c07"/>
+      <stop offset="100%" stop-color="#080402"/>
+    </radialGradient>
+    <linearGradient id="gatewayFrame" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a2e1d"/>
+      <stop offset="50%" stop-color="#24140b"/>
+      <stop offset="100%" stop-color="#140803"/>
+    </linearGradient>
+    <linearGradient id="amberFiberGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </linearGradient>
+    <filter id="shadow3DGateway" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="20" flood-color="#000000" flood-opacity="0.85"/>
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#df7b35" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#gatewayStudioBg)"/>
+
+  <!-- 3D Studio Microservices Topology Stage -->
+  <g filter="url(#shadow3DGateway)" transform="translate(85, 40)">
+    <!-- Main Frame -->
+    <rect x="0" y="0" width="530" height="340" rx="28" fill="url(#gatewayFrame)" stroke="#df7b35" stroke-width="2.5"/>
+
+    <!-- Dark Inset Canvas -->
+    <rect x="14" y="14" width="502" height="312" rx="20" fill="#0c0603"/>
+
+    <!-- Header Bar -->
+    <rect x="14" y="14" width="502" height="42" rx="18" fill="#1f1108"/>
+    <text x="36" y="40" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="900" fill="#ffffff">DISTRIBUTED API GATEWAY &bull; HIGH CONCURRENCY</text>
+    <rect x="380" y="24" width="120" height="22" rx="6" fill="#10b981"/>
+    <text x="440" y="39" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">99.99% UPTIME</text>
+
+    <!-- Visual Architecture Topology Diagram -->
+    <g transform="translate(36, 75)">
+      <!-- Client Incoming Node -->
+      <g transform="translate(0, 70)">
+        <rect x="0" y="0" width="100" height="85" rx="14" fill="#1f1109" stroke="#df7b35" stroke-width="2"/>
+        <circle cx="50" cy="28" r="14" fill="#df7b35"/>
+        <text x="50" y="34" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">HTTP</text>
+        <text x="50" y="65" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#a89a8c" text-anchor="middle">Clients / SPA</text>
+      </g>
+
+      <!-- Connecting Luminous Data Pipeline 1 -->
+      <path d="M100,112 L160,112" fill="none" stroke="url(#amberFiberGlow)" stroke-width="4" stroke-dasharray="8 4"/>
+
+      <!-- Central API Gateway & Reverse Proxy Node -->
+      <g transform="translate(160, 35)">
+        <rect x="0" y="0" width="135" height="155" rx="18" fill="#2d160b" stroke="#f59e0b" stroke-width="2.5"/>
+        <circle cx="67" cy="38" r="22" fill="#ea580c"/>
+        <text x="67" y="44" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle">⚡</text>
+        <text x="67" y="80" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">API Gateway</text>
+        <text x="67" y="100" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#fef08a" text-anchor="middle">Auth &bull; Rate Limit</text>
+        <rect x="18" y="118" width="100" height="20" rx="6" fill="#140803"/>
+        <text x="67" y="132" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#34d399" text-anchor="middle">&lt; 14ms Latency</text>
+      </g>
+
+      <!-- Connecting Luminous Data Pipelines to Microservices -->
+      <path d="M295,75 L355,40" fill="none" stroke="url(#amberFiberGlow)" stroke-width="3" stroke-dasharray="6 3"/>
+      <path d="M295,112 L355,112" fill="none" stroke="url(#amberFiberGlow)" stroke-width="3" stroke-dasharray="6 3"/>
+      <path d="M295,150 L355,185" fill="none" stroke="url(#amberFiberGlow)" stroke-width="3" stroke-dasharray="6 3"/>
+
+      <!-- 3 Downstream Service Clusters -->
+      <g transform="translate(355, 0)">
+        <!-- Service 1: Users & Auth -->
+        <rect x="0" y="0" width="115" height="60" rx="10" fill="#1f1109" stroke="#3d2112" stroke-width="1.5"/>
+        <text x="14" y="24" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="800" fill="#ffffff">Auth Service</text>
+        <text x="14" y="44" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#34d399">● FastAPI / JWT</text>
+
+        <!-- Service 2: Redis Cache -->
+        <rect x="0" y="75" width="115" height="60" rx="10" fill="#1f1109" stroke="#f59e0b" stroke-width="1.5"/>
+        <text x="14" y="99" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="800" fill="#fef08a">Redis In-Mem</text>
+        <text x="14" y="119" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#fb923c">● 0.8ms Query</text>
+
+        <!-- Service 3: PostgreSQL Cluster -->
+        <rect x="0" y="150" width="115" height="60" rx="10" fill="#1f1109" stroke="#3d2112" stroke-width="1.5"/>
+        <text x="14" y="174" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="800" fill="#ffffff">PostgreSQL DB</text>
+        <text x="14" y="194" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#34d399">● Normalized Shards</text>
+      </g>
+    </g>
+
+    <!-- Floating Core Architecture 3D Badge -->
+    <g transform="translate(480, -15)">
+      <circle cx="0" cy="0" r="30" fill="url(#amberFiberGlow)" stroke="#ffffff" stroke-width="2.5" filter="drop-shadow(0 8px 16px rgba(0,0,0,0.6))"/>
+      <text x="0" y="6" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="900" fill="#000000" text-anchor="middle">API</text>
+    </g>
+  </g>
+</svg>

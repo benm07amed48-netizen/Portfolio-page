@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgGlowRedis" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#331c12"/>
+      <stop offset="70%" stop-color="#170c07"/>
+      <stop offset="100%" stop-color="#0a0402"/>
+    </radialGradient>
+    <linearGradient id="crystalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="30%" stop-color="#f59e0b"/>
+      <stop offset="70%" stop-color="#df7b35"/>
+      <stop offset="100%" stop-color="#9a3412"/>
+    </linearGradient>
+    <filter id="glowRedis" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="18" flood-color="#f97316" flood-opacity="0.6"/>
+      <feDropShadow dx="0" dy="16" stdDeviation="12" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bgGlowRedis)"/>
+
+  <!-- 3D Crystalline Memory Polyhedron (In-Memory Performance) -->
+  <g filter="url(#glowRedis)" transform="translate(200, 200)">
+    <!-- Central Octahedron Facets -->
+    <polygon points="0,-110 95,-15 0,35" fill="url(#crystalGrad)" opacity="0.95"/>
+    <polygon points="0,-110 -95,-15 0,35" fill="#ca8a04" opacity="0.9"/>
+    <polygon points="0,110 95,-15 0,35" fill="#9a3412" opacity="0.95"/>
+    <polygon points="0,110 -95,-15 0,35" fill="#451a03" opacity="0.95"/>
+
+    <!-- Specular Ridge Lines -->
+    <line x1="0" y1="-110" x2="0" y2="110" stroke="#fef9c3" stroke-width="2.5"/>
+    <line x1="-95" y1="-15" x2="95" y2="-15" stroke="#fef9c3" stroke-width="2.5"/>
+    <line x1="0" y1="35" x2="95" y2="-15" stroke="#ffffff" stroke-width="2"/>
+    <line x1="0" y1="35" x2="-95" y2="-15" stroke="#ffffff" stroke-width="2"/>
+
+    <!-- Floating Energy Particles -->
+    <circle cx="120" cy="-60" r="4" fill="#fbbf24"/>
+    <circle cx="-110" cy="50" r="5" fill="#f97316"/>
+    <circle cx="90" cy="90" r="3" fill="#ffffff"/>
+  </g>
+</svg>

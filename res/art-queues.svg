@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgGlowQueues" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#281a13"/>
+      <stop offset="70%" stop-color="#120c08"/>
+      <stop offset="100%" stop-color="#080402"/>
+    </radialGradient>
+    <linearGradient id="orbitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="50%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+    <filter id="shadowQueues" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bgGlowQueues)"/>
+
+  <!-- 3D Aerodynamic Pipeline Ring with Moving Pulses (Async Queues) -->
+  <g filter="url(#shadowQueues)" transform="translate(200, 200)">
+    <!-- Outer Torus / Ring -->
+    <ellipse cx="0" cy="0" rx="120" ry="70" fill="none" stroke="url(#orbitGrad)" stroke-width="22" stroke-dasharray="140 30 180 40"/>
+    <ellipse cx="0" cy="0" rx="120" ry="70" fill="none" stroke="#fef08a" stroke-width="4" opacity="0.6"/>
+
+    <!-- Orbital Amber Spheres (Data Payloads) -->
+    <g transform="translate(100, -35)">
+      <circle cx="0" cy="0" r="16" fill="#f59e0b" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="-4" cy="-4" r="5" fill="#ffffff" opacity="0.8"/>
+    </g>
+
+    <g transform="translate(-110, 20)">
+      <circle cx="0" cy="0" r="20" fill="#ea580c" stroke="#fed7aa" stroke-width="2"/>
+      <circle cx="-5" cy="-5" r="6" fill="#ffffff" opacity="0.8"/>
+    </g>
+
+    <g transform="translate(10, 65)">
+      <circle cx="0" cy="0" r="14" fill="#df7b35" stroke="#ffffff" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

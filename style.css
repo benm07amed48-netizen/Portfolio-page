@@ -1729,6 +1729,51 @@ a {
   gap: 24px;
 }
 
+.contact-social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.contact-social-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 84px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--glass-specular);
+  color: var(--text-main);
+  text-decoration: none;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+}
+
+.contact-social-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 10px 24px var(--accent-primary-glow), var(--glass-specular);
+  background: var(--bg-card-hover);
+}
+
+.contact-social-card img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.social-name {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
 .contact-highlight-card {
   padding: 28px;
   background: var(--bg-card);
@@ -1963,6 +2008,7 @@ a {
   .dial-wheel-orbit { width: 300px; height: 300px; }
   .dial-card-node { width: 85px; height: 95px; }
   .dial-node-icon { font-size: 1.6rem; }
+  .contact-social-grid { grid-template-columns: 1fr; }
   .resume-profile-header { flex-direction: column; text-align: center; }
   .resume-action-buttons { width: 100%; }
   .site-footer { flex-direction: column; text-align: center; }
